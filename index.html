@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urban Waxing – voskovanie lyží a snowboardov · Sokolovce</title>
+<meta name="description" content="Prémiové voskovanie lyží a snowboardov, brúsenie hrán a opravy sklznice. Ručná práca, lokálny servis v Sokolovciach. Objednávky cez Instagram.">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#dbeaef">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:title" content="Urban Waxing – voskovanie lyží a snowboardov">
+<meta property="og:description" content="Ručná práca, žiadna pásová výroba. Voskovanie, brúsenie hrán a opravy sklznice v Sokolovciach.">
+<meta property="og:image" content="https://matuslenicky.github.io/urbanwaxing/img/og.jpg">
+<meta property="og:url" content="https://matuslenicky.github.io/urbanwaxing/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Urban Waxing","description":"Prémiové voskovanie lyží a snowboardov, brúsenie hrán a opravy sklznice. Ručná práca, lokálny servis v Sokolovciach.","image":"https://matuslenicky.github.io/urbanwaxing/img/og.jpg","url":"https://matuslenicky.github.io/urbanwaxing/","address":{"@type":"PostalAddress","addressLocality":"Sokolovce","addressRegion":"Trnavský kraj","addressCountry":"SK"},"areaServed":"Sokolovce a okolie","sameAs":["https://www.instagram.com/urbanwaxing/"]}
+</script>
+<style>
+@font-face{font-family:Archivo;font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(fonts/archivo-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Archivo;font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(fonts/archivo-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+:root{
+  --ice:#dbeaef; --ice-2:#e9f2f5; --snow:#f6f9fa;
+  --ink:#0e1114; --ink-2:#161c21; --ink-3:#252d34;
+  --muted:#46525c; --line:rgba(14,17,20,.13);
+  --acc:#1d6487; --frost:#8cc3da; --mist:#a9bac4;
+  --r:20px; --wrap:1180px; --hdr:68px;
+  --f:Archivo,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:only light;overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 12px);-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:clip;background:var(--snow);color:var(--ink);font:400 1.0625rem/1.6 var(--f);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+.wrap{width:min(100% - 32px,var(--wrap));margin-inline:auto}
+@media (min-width:760px){.wrap{width:min(100% - 64px,var(--wrap))}}
+.i{width:1.2em;height:1.2em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.skip{position:absolute;left:-9999px;top:10px;z-index:100;background:var(--ink);color:#fff;padding:12px 16px;border-radius:12px;font-weight:700}
+.skip:focus{left:16px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.display{font-weight:800;font-stretch:118%;text-transform:uppercase;line-height:.98;letter-spacing:-.012em}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(219,234,239,.94);border-bottom:1px solid transparent;transition:border-color .2s,background-color .2s}
+.hdr.is-scrolled{background:rgba(233,242,245,.97);border-bottom-color:var(--line)}
+.hdr-in{display:flex;align-items:center;gap:20px;height:var(--hdr)}
+.brand{display:flex;align-items:center;min-height:44px}
+.brand img{height:28px;width:auto}
+.nav{display:none;margin-left:auto;gap:2px}
+.nav a{padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem}
+.nav a:hover{background:rgba(14,17,20,.06)}
+.hdr .btn{margin-left:auto}
+@media (min-width:880px){.nav{display:flex}.hdr .btn{margin-left:6px}.brand img{height:33px}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:1.5px solid transparent;font:inherit;font-weight:700;font-stretch:106%;font-size:1rem;line-height:1.2;text-decoration:none;cursor:pointer;transition:transform .15s,background-color .2s,border-color .2s,color .2s}
+.btn:active{transform:translateY(1px)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--ink-3)}
+.btn-line{border-color:rgba(14,17,20,.32);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink);background:rgba(255,255,255,.45)}
+.btn-sm{min-height:44px;padding:0 18px;font-size:.95rem}
+.btn-block{width:100%}
+.btn .i{width:20px;height:20px}
+
+/* Hero */
+.hero{position:relative;background:var(--ice);padding:28px 0 clamp(70px,9vw,130px);overflow:hidden}
+.hero-in{position:relative;z-index:1;display:grid;gap:36px;align-items:center}
+@media (min-width:960px){.hero{padding-top:52px}.hero-in{grid-template-columns:1.12fr .88fr;gap:56px}}
+.pill{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(14,17,20,.08);font-size:.9rem;font-weight:600}
+.dot{width:8px;height:8px;border-radius:50%;background:#178a4a;box-shadow:0 0 0 4px rgba(23,138,74,.18)}
+.hero h1{margin:0;font-size:clamp(2.2rem,5.3vw,4.35rem)}
+.hero h1 span{display:block;color:var(--acc)}
+.lead{margin:22px 0 30px;max-width:34em;color:var(--muted);font-size:clamp(1.06rem,1.35vw,1.2rem)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:520px){.cta-row .btn{flex:1 1 100%}}
+.facts{list-style:none;padding:0;margin:30px 0 0;display:flex;flex-wrap:wrap;gap:10px 24px;font-weight:600;font-size:.95rem}
+.facts li{display:flex;align-items:center;gap:8px}
+.facts .i{color:var(--acc)}
+.hero-media{position:relative;margin:0}
+.hero-media img{width:100%;aspect-ratio:5/4;object-fit:cover;object-position:50% 40%;border-radius:var(--r);box-shadow:0 34px 60px -34px rgba(14,17,20,.55)}
+@media (min-width:960px){.hero-media img{aspect-ratio:4/5}}
+.sticker{position:absolute;left:14px;bottom:18px;background:var(--ink);color:#fff;padding:13px 18px 14px;border-radius:14px;transform:rotate(-3deg);box-shadow:0 18px 30px -16px rgba(0,0,0,.6)}
+.sticker strong{display:block;font-stretch:118%;font-weight:800;text-transform:uppercase;font-size:1.02rem;letter-spacing:.01em}
+.sticker span{font-size:.88rem;color:#cad7de}
+@media (min-width:960px){.sticker{left:-26px;bottom:34px}}
+.mtn{position:absolute;left:0;bottom:-1px;width:100%;height:clamp(54px,8vw,120px);fill:var(--ink);display:block}
+
+/* Marquee */
+.band{background:var(--ink);color:#fff;overflow:hidden;padding:6px 0 22px}
+.band-track{display:flex;width:max-content;animation:mq 40s linear infinite}
+.band-group{display:flex;align-items:center;gap:26px;padding-right:26px;font-weight:800;font-stretch:122%;text-transform:uppercase;font-size:clamp(1rem,2vw,1.3rem);letter-spacing:.02em;white-space:nowrap}
+.band-group i{font-style:normal;color:var(--frost)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* Sections */
+.sec{padding:clamp(64px,9vw,120px) 0}
+.sec-ice{background:var(--ice)}
+.sec-ink{background:var(--ink);color:#e8f0f3}
+.sec-head{max-width:740px;margin-bottom:clamp(32px,4vw,52px)}
+.kicker{margin:0 0 14px;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.sec-ink .kicker{color:var(--frost)}
+.h2{margin:0;font-size:clamp(1.85rem,4vw,3.05rem)}
+.sec-lead{margin:18px 0 0;max-width:40em;color:var(--muted);font-size:1.1rem}
+.sec-ink .sec-lead{color:var(--mist)}
+
+/* Services */
+.cards3{display:grid;gap:16px}
+@media (min-width:780px){.cards3{grid-template-columns:repeat(3,1fr);gap:20px}}
+.svc{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 26px 26px}
+.svc::before{content:attr(data-no);position:absolute;top:24px;right:26px;font-weight:800;font-stretch:122%;font-size:1.7rem;line-height:1;color:rgba(14,17,20,.14)}
+.svc-ico{display:grid;place-items:center;width:54px;height:54px;margin-bottom:22px;border-radius:15px;background:var(--ice)}
+.svc-ico .i{width:28px;height:28px;stroke-width:1.8}
+.svc h3{margin:0 0 10px;font-size:1.35rem;font-weight:800;font-stretch:112%}
+.svc p{margin:0 0 20px;color:var(--muted)}
+.ticks{list-style:none;padding:0;margin:auto 0 0;display:grid;gap:8px;font-weight:600;font-size:.95rem}
+.ticks li{display:flex;align-items:center;gap:10px}
+.ticks .i{color:var(--acc)}
+.note{display:flex;align-items:center;gap:10px;margin:26px 0 0;color:var(--muted);font-weight:500}
+.note .i{color:var(--acc)}
+
+/* Before / after */
+.ba-grid{display:grid;gap:34px}
+@media (min-width:780px){.ba-grid{grid-template-columns:repeat(3,1fr);gap:22px}}
+.ba-media{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#c9d9e0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
+.ba[data-state="pred"] .ba-po{opacity:0}
+.ba-ctl{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;padding:4px;border-radius:999px;background:rgba(255,255,255,.94);box-shadow:0 10px 24px -12px rgba(0,0,0,.5)}
+.ba-ctl button{min-width:76px;min-height:44px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;transition:background-color .2s,color .2s}
+.ba-ctl button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.ba h3{margin:18px 0 4px;font-size:1.15rem;font-weight:800;font-stretch:108%}
+.ba p{margin:0;color:var(--muted);font-size:.96rem}
+
+/* Process */
+.proc{display:grid;gap:48px}
+@media (min-width:980px){.proc{grid-template-columns:1.3fr .7fr;gap:64px;align-items:start}}
+.steps{list-style:none;padding:0;margin:38px 0 0;display:grid;gap:12px;counter-reset:s}
+@media (min-width:620px){.steps{grid-template-columns:1fr 1fr}}
+.steps li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:3px 16px;padding:18px 20px;border-radius:16px;background:var(--ink-2);border:1px solid rgba(255,255,255,.07)}
+.steps li::before{content:counter(s,decimal-leading-zero);grid-row:span 2;font-weight:800;font-stretch:122%;font-size:1.5rem;line-height:1.15;color:var(--frost)}
+.steps b{color:#fff;font-weight:700}
+.steps span{color:var(--mist);font-size:.95rem;line-height:1.5}
+.reels-h{margin:0 0 14px;font-weight:700;color:#fff}
+.reels{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.reel{position:relative;display:block;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#222;text-decoration:none;color:#fff}
+.reel img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.reel:hover img{transform:scale(1.04)}
+.reel-cap{position:absolute;left:0;right:0;bottom:0;padding:48px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.88))}
+.reel-cap b{display:block;font-size:.95rem;line-height:1.25}
+.reel-cap small{display:block;margin-top:4px;color:#c8d5dc;font-size:.8rem}
+.more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;min-height:44px;font-weight:700;color:#fff;text-decoration:none}
+.more:hover{text-decoration:underline}
+
+/* For whom */
+.duo{display:grid;gap:18px}
+@media (min-width:880px){.duo{grid-template-columns:1.1fr .9fr;gap:22px}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(26px,4vw,46px)}
+.big-ticks{list-style:none;padding:0;margin:28px 0;display:grid;gap:16px;font-size:clamp(1.15rem,2vw,1.4rem);font-weight:700;font-stretch:106%;line-height:1.3}
+.big-ticks li{display:flex;align-items:flex-start;gap:14px}
+.big-ticks .i{width:30px;height:30px;padding:6px;border-radius:50%;background:var(--ice);stroke-width:2.6}
+.card > p:last-child{margin:0;color:var(--muted)}
+.story{position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--ink);border-color:var(--ink);color:#fff}
+.story .kicker{color:var(--frost)}
+.year{margin:0;font-weight:800;font-stretch:125%;font-size:clamp(4.2rem,10vw,7rem);line-height:.88;letter-spacing:-.02em;color:var(--frost)}
+.story-l{margin:12px 0 0;color:var(--mist)}
+.story-big{margin:auto 0 26px;padding-top:40px;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;font-stretch:112%;line-height:1.15}
+.link{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:44px;font-weight:700;text-decoration:none;color:#fff;border-bottom:2px solid var(--frost)}
+.link:hover{color:var(--frost)}
+.story svg.peaks{position:absolute;right:-20px;top:24px;width:200px;height:auto;fill:rgba(140,195,218,.08)}
+
+/* Order */
+.order{display:grid;gap:40px}
+@media (min-width:980px){.order{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}}
+.how{list-style:none;padding:0;margin:34px 0 0;counter-reset:h}
+.how li{counter-increment:h;position:relative;padding:3px 0 24px 54px}
+.how li::before{content:counter(h);position:absolute;left:0;top:0;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:.95rem}
+.how li::after{content:"";position:absolute;left:16.5px;top:40px;bottom:6px;width:1px;background:rgba(14,17,20,.22)}
+.how li:last-child{padding-bottom:0}
+.how li:last-child::after{display:none}
+.how span{color:var(--muted)}
+.order-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3.5vw,36px);box-shadow:0 34px 70px -44px rgba(14,17,20,.4)}
+.order-card fieldset{border:0;margin:0 0 22px;padding:0;min-width:0}
+.order-card legend,.field label{display:block;margin:0 0 10px;padding:0;font-weight:700;font-size:.95rem}
+.opt{font-weight:500;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;display:inline-flex}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(14,17,20,.22);font-weight:600;transition:background-color .15s,border-color .15s,color .15s;pointer-events:none}
+.chip .i{width:16px;height:16px;stroke-width:3;display:none}
+.chip input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip input:checked + span .i{display:block}
+.chip input:focus-visible + span{outline:3px solid var(--acc);outline-offset:2px}
+.chip:hover span{border-color:var(--ink)}
+.row2{display:grid;gap:0 14px}
+@media (min-width:520px){.row2{grid-template-columns:auto 1fr}}
+.field{display:flex;flex-direction:column;margin-bottom:18px;min-width:0}
+.field input[type="text"],.field textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:12px;border:1.5px solid rgba(14,17,20,.22);background:var(--snow);color:var(--ink);font:inherit;font-size:1rem;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#69757e}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(29,100,135,.25)}
+.stepper{display:inline-flex;align-items:center;height:48px;border:1.5px solid rgba(14,17,20,.22);border-radius:12px;background:var(--snow);overflow:hidden;align-self:flex-start}
+.stepper button{width:46px;height:100%;border:0;background:transparent;font:inherit;font-size:1.35rem;font-weight:600;color:var(--ink);cursor:pointer}
+.stepper button:hover{background:rgba(14,17,20,.06)}
+.stepper input{width:44px;height:100%;border:0;background:transparent;text-align:center;font:inherit;font-weight:700;font-size:1.05rem;color:var(--ink);-moz-appearance:textfield;appearance:textfield}
+.stepper input::-webkit-inner-spin-button,.stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.preview{margin:4px 0 18px;padding:10px 16px 16px;border-radius:14px;background:var(--ice-2)}
+.preview-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+.preview-h{margin:0;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;margin-right:-8px;border:0;border-radius:999px;background:transparent;color:var(--ink);font:inherit;font-size:.88rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:rgba(14,17,20,.07)}
+.copy-btn .i{width:16px;height:16px}
+.preview-t{margin:0;white-space:pre-line;font-size:.98rem;line-height:1.55;overflow-wrap:anywhere}
+.order-foot{margin:12px 0 0;text-align:center;font-size:.88rem;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:24px;z-index:80;max-width:calc(100% - 32px);padding:12px 18px;border-radius:12px;background:var(--ink);color:#fff;font-weight:600;opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity .25s,transform .25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* Contact */
+.contact{display:grid;gap:34px;align-items:center}
+@media (min-width:880px){.contact{grid-template-columns:1fr 1fr;gap:56px}}
+.contact .cta-row{margin-top:28px}
+.map-card{position:relative;display:block;aspect-ratio:16/11;border-radius:var(--r);overflow:hidden;background:var(--ice);border:1px solid var(--line);color:var(--ink);text-decoration:none}
+.map-card .topo{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:rgba(29,100,135,.22);stroke-width:1.4}
+.map-pin{position:absolute;left:50%;top:44%;display:grid;place-items:center;width:58px;height:58px;border-radius:50% 50% 50% 0;background:var(--ink);color:#fff;transform:translate(-50%,-50%) rotate(-45deg);box-shadow:0 16px 30px -12px rgba(0,0,0,.5)}
+.map-pin .i{transform:rotate(45deg);width:24px;height:24px}
+.map-label{position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:14px;background:#fff;box-shadow:0 10px 24px -16px rgba(0,0,0,.4)}
+.map-label b{display:block;font-size:1.05rem}
+.map-label small{color:var(--muted);font-size:.88rem}
+.map-go{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.92rem;white-space:nowrap}
+.map-card:hover .map-go{text-decoration:underline}
+
+/* Footer */
+.ftr{background:var(--ink);color:var(--mist);padding:52px 0 34px}
+.ftr-in{display:grid;gap:22px}
+@media (min-width:880px){.ftr-in{grid-template-columns:1fr auto;align-items:center}}
+.ftr img{height:34px;width:auto}
+.ftr p{margin:12px 0 0}
+.ftr nav{display:flex;flex-wrap:wrap;gap:0 20px}
+.ftr nav a{display:inline-flex;align-items:center;min-height:44px;color:#e8f0f3;text-decoration:none;font-weight:600}
+.ftr nav a:hover{text-decoration:underline}
+.ftr-bottom{grid-column:1/-1;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:.88rem}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .band-track{animation:none}
+  *,*::before,*::after{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M2 12h20M12 2v20m8-6-4-4 4-4M4 8l4 4-4 4M16 4l-4 4-4-4M8 20l4-4 4 4"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0v0M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-5.9-2.4L3.4 16a2 2 0 0 1 3.3-2.3L8 15"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8a4 4 0 0 1 3.4 3.4zM17.5 6.5h.01"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-iron" viewBox="0 0 24 24"><path d="M2.5 18h19v-3.5A5.5 5.5 0 0 0 16 9H9.5a7 7 0 0 0-7 7z"/><path d="M10 9V6.5A1.5 1.5 0 0 1 11.5 5H19"/><path d="M6 21.5h12"/></symbol>
+  <symbol id="i-edge" viewBox="0 0 24 24"><path d="M3 20h18M3 20 15 5"/><path d="M8.5 20a6 6 0 0 0-1.9-4.4"/><path d="m17 3 4 4"/></symbol>
+  <symbol id="i-patch" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2"/><path d="M6 6v12M18 6v12M10 10h.01M14 10h.01M10 14h.01M14 14h.01"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m6 3 14 9-14 9z"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Preskočiť na obsah</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="Urban Waxing – na začiatok"><img src="img/logo.png" width="456" height="77" alt="Urban Waxing"></a>
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a href="#sluzby">Služby</a>
+      <a href="#pred-po">Pred / po</a>
+      <a href="#proces">Proces</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn-ink btn-sm" href="#objednavka">Objednať</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-h">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <p class="pill"><span class="dot" aria-hidden="true"></span>Sezóna 2026/27 · prijímam objednávky</p>
+        <h1 class="display" id="hero-h">Prémiové voskovanie <span>lyží &amp; snowboardov</span></h1>
+        <p class="lead">Precízny servis pre tých, ktorí chcú maximálny sklz a výkon na svahu. Ručná práca, žiadna pásová výroba – každý pár riešim individuálne.</p>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="#objednavka">Objednať servis <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line" href="#pred-po">Pozrieť pred / po</a>
+        </div>
+        <ul class="facts">
+          <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Sokolovce a okolie</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-snow"/></svg>Lyže aj snowboardy</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-hand"/></svg>Ručná práca od roku 2023</li>
+        </ul>
+      </div>
+      <figure class="hero-media">
+        <img src="img/dielna-800.webp" srcset="img/dielna-480.webp 480w, img/dielna-800.webp 800w, img/dielna-1040.webp 1040w" sizes="(min-width: 960px) 460px, calc(100vw - 32px)" width="1040" height="1305" alt="Lyže a snowboard pripravené na servis v dielni Urban Waxing" fetchpriority="high">
+        <figcaption class="sticker"><strong>Ručná práca</strong><span>= individuálny prístup</span></figcaption>
+      </figure>
+    </div>
+    <svg class="mtn" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120V92l110-44 70 26L320 10l96 64 78-34 120 58 118-72 92 50 120-62 128 80 82-34 116 40 120-56 50 22v54z"/></svg>
+  </section>
+
+  <div class="band" aria-hidden="true">
+    <div class="band-track">
+      <div class="band-group"><span>Voskovanie</span><i>✦</i><span>Brúsenie hrán</span><i>✦</i><span>Opravy sklznice</span><i>✦</i><span>Lyže</span><i>✦</i><span>Snowboardy</span><i>✦</i><span>Sokolovce</span><i>✦</i></div>
+      <div class="band-group"><span>Voskovanie</span><i>✦</i><span>Brúsenie hrán</span><i>✦</i><span>Opravy sklznice</span><i>✦</i><span>Lyže</span><i>✦</i><span>Snowboardy</span><i>✦</i><span>Sokolovce</span><i>✦</i></div>
+    </div>
+  </div>
+
+  <section class="sec" id="sluzby" aria-labelledby="sluzby-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Služby</p>
+        <h2 class="display h2" id="sluzby-h">Lyže a&nbsp;snowboard pripravím kompletne</h2>
+        <p class="sec-lead">Okrem voskovania ponúkam aj brúsenie hrán a opravy sklznice, takže sa o tvoju výbavu môžeme postarať od A po Z.</p>
+      </div>
+      <div class="cards3">
+        <article class="svc" data-no="01">
+          <span class="svc-ico"><svg class="i" aria-hidden="true"><use href="#i-iron"/></svg></span>
+          <h3>Voskovanie</h3>
+          <p>Starý vosok von, sklznica odmastená, nový vosok zažehlený a vykefovaný. Ručne, pár po páre.</p>
+          <ul class="ticks">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Lepší sklz</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Dlhšia životnosť sklznice</li>
+          </ul>
+        </article>
+        <article class="svc" data-no="02">
+          <span class="svc-ico"><svg class="i" aria-hidden="true"><use href="#i-edge"/></svg></span>
+          <h3>Brúsenie hrán</h3>
+          <p>Hrany, ktoré držia v oblúku. Tam, kde si stroj neporadí, prichádza ručná práca.</p>
+          <ul class="ticks">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Istota na tvrdom snehu</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Lyže aj snowboardy</li>
+          </ul>
+        </article>
+        <article class="svc" data-no="03">
+          <span class="svc-ico"><svg class="i" aria-hidden="true"><use href="#i-patch"/></svg></span>
+          <h3>Opravy sklznice</h3>
+          <p>Ryhy a poškodenia sklznice opravím, aby bola výbava pripravená na celú sezónu.</p>
+          <ul class="ticks">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Nová v sezóne 2026/27</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Spolu s voskovaním</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Cenu a termín dohodneme v správe na Instagrame.</p>
+    </div>
+  </section>
+
+  <section class="sec sec-ice" id="pred-po" aria-labelledby="ba-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Pred / po</p>
+        <h2 class="display h2" id="ba-h">Rozdiel vidno na prvý pohľad</h2>
+        <p class="sec-lead">Skutočné lyže a snowboardy zákazníkov. Prepni si <b>Pred</b> a <b>Po</b> – alebo ťukni na fotku.</p>
+      </div>
+      <div class="ba-grid">
+        <article class="ba" data-state="po">
+          <div class="ba-media">
+            <img class="ba-img ba-pred" src="img/board-pred-800.webp" srcset="img/board-pred-480.webp 480w, img/board-pred-800.webp 800w, img/board-pred-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Dva snowboardy pred servisom – sivá, vysušená sklznica">
+            <img class="ba-img ba-po" src="img/board-po-800.webp" srcset="img/board-po-480.webp 480w, img/board-po-800.webp 800w, img/board-po-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Tie isté snowboardy po servise – čierna, navoskovaná sklznica">
+            <div class="ba-ctl" role="group" aria-label="Snowboardy: pred alebo po">
+              <button type="button" data-show="pred" aria-pressed="false">Pred</button>
+              <button type="button" data-show="po" aria-pressed="true">Po</button>
+            </div>
+          </div>
+          <h3>Snowboardy pripravené na jazdu</h3>
+          <p>Voskovanie a servis · február 2026</p>
+        </article>
+        <article class="ba" data-state="po">
+          <div class="ba-media">
+            <img class="ba-img ba-pred" src="img/lyze-pred-800.webp" srcset="img/lyze-pred-480.webp 480w, img/lyze-pred-800.webp 800w, img/lyze-pred-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Lyže pred servisom – vyblednutá sklznica so suchými miestami">
+            <img class="ba-img ba-po" src="img/lyze-po-800.webp" srcset="img/lyze-po-480.webp 480w, img/lyze-po-800.webp 800w, img/lyze-po-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Lyže po servise – rovnomerne čierna sklznica">
+            <div class="ba-ctl" role="group" aria-label="Lyže: pred alebo po">
+              <button type="button" data-show="pred" aria-pressed="false">Pred</button>
+              <button type="button" data-show="po" aria-pressed="true">Po</button>
+            </div>
+          </div>
+          <h3>Predĺženie životnosti sklznice</h3>
+          <p>Voskovanie lyží · január 2026</p>
+        </article>
+        <article class="ba" data-state="po">
+          <div class="ba-media">
+            <img class="ba-img ba-pred" src="img/sklz-pred-800.webp" srcset="img/sklz-pred-480.webp 480w, img/sklz-pred-800.webp 800w, img/sklz-pred-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Sklznica pred servisom – poškriabaná a sivá">
+            <img class="ba-img ba-po" src="img/sklz-po-800.webp" srcset="img/sklz-po-480.webp 480w, img/sklz-po-800.webp 800w, img/sklz-po-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Sklznica po servise – hladká a lesklá">
+            <div class="ba-ctl" role="group" aria-label="Sklznica z roku 2023: pred alebo po">
+              <button type="button" data-show="pred" aria-pressed="false">Pred</button>
+              <button type="button" data-show="po" aria-pressed="true">Po</button>
+            </div>
+          </div>
+          <h3>Rok 2023 – prvé premeny sklzníc</h3>
+          <p>Dnes? Rovnaký štandard, viac skúseností.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-ink" id="proces" aria-labelledby="proc-h">
+    <div class="wrap proc">
+      <div>
+        <p class="kicker">Proces</p>
+        <h2 class="display h2" id="proc-h">Voskovanie v&nbsp;6&nbsp;krokoch</h2>
+        <p class="sec-lead">Ručná práca. Žiadna pásová výroba. Každý pár riešim individuálne.</p>
+        <ol class="steps">
+          <li><b>Odstránenie zvyškového vosku</b><span>Starý, zašpinený vosok dole zo sklznice.</span></li>
+          <li><b>Odmastenie</b><span>Čistý povrch, aby nový vosok dobre priľnul.</span></li>
+          <li><b>Aplikácia nového vosku</b><span>Čerstvý vosok na celú plochu sklznice.</span></li>
+          <li><b>Zažehlenie</b><span>Žehlička vosok roztopí a zapracuje do sklznice.</span></li>
+          <li><b>Odstránenie prebytočného vosku</b><span>Po vychladnutí zoškrabem, čo je navyše.</span></li>
+          <li><b>Kefovanie dvoma druhmi vlasov</b><span>Na záver kefy, ktoré sklznicu doladia pre lepší sklz.</span></li>
+        </ol>
+      </div>
+      <div>
+        <p class="reels-h">Pozri si to na videu</p>
+        <div class="reels">
+          <a class="reel" href="https://www.instagram.com/urbanwaxing/reel/DVBbrixiLtu/" target="_blank" rel="noopener">
+            <img src="img/reel-proces.webp" width="361" height="640" loading="lazy" decoding="async" alt="">
+            <span class="reel-cap"><b>Proces voskovania lyží</b><small>Video na Instagrame</small></span>
+          </a>
+          <a class="reel" href="https://www.instagram.com/urbanwaxing/reel/DfXp1efEblS/" target="_blank" rel="noopener">
+            <img src="img/reel-hrany.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
+            <span class="reel-cap"><b>Brúsenie hrán na snowboarde</b><small>Video na Instagrame</small></span>
+          </a>
+        </div>
+        <a class="more" href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>Viac na @urbanwaxing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="pre-koho" aria-labelledby="komu-h">
+    <div class="wrap duo">
+      <div class="card">
+        <p class="kicker">Pre koho je Urban Waxing?</p>
+        <h2 class="display h2" id="komu-h">Pre ľudí, ktorí chcú</h2>
+        <ul class="big-ticks">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>lepší sklz</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>dlhšiu životnosť sklznice</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>istotu, že servis je spravený poriadne</li>
+        </ul>
+        <p>Či jazdíš na lyžiach alebo na snowboarde, rekreačne alebo častejšie – kvalitná príprava na svah robí rozdiel.</p>
+      </div>
+      <div class="card story">
+        <svg class="peaks" viewBox="0 0 200 120" aria-hidden="true"><path d="M0 120 62 30l28 34L128 0l72 120z"/></svg>
+        <p class="kicker">Odkiaľ som prišiel</p>
+        <p class="year">2023</p>
+        <p class="story-l">Prvé premeny sklzníc, prvé skúsenosti.</p>
+        <p class="story-big">Dnes? Rovnaký štandard, viac skúseností.</p>
+        <a class="link" href="https://www.instagram.com/stories/highlights/18089134093871854/" target="_blank" rel="noopener">Ohlasy zákazníkov „Od vás“ <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-ice" id="objednavka" aria-labelledby="obj-h">
+    <div class="wrap order">
+      <div>
+        <p class="kicker">Objednávka</p>
+        <h2 class="display h2" id="obj-h">Objednaj servis cez Instagram</h2>
+        <p class="sec-lead">Objednávky a termíny riešim v správach. Vyklikaj, čo potrebuješ – správu pripravím za teba, stačí ju vložiť do chatu.</p>
+        <ol class="how">
+          <li><b>Napíš správu</b><br><span>na Instagram @urbanwaxing</span></li>
+          <li><b>Dohodneme termín</b><br><span>a cenu podľa toho, čo treba spraviť</span></li>
+          <li><b>Výbavu odovzdáš</b><br><span>v Sokolovciach</span></li>
+          <li><b>Vyzdvihneš ju pripravenú</b><br><span>na prvú jazdu</span></li>
+        </ol>
+      </div>
+      <form class="order-card" id="order" novalidate>
+        <fieldset>
+          <legend>Čo prinesieš?</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="gear" value="lyže"><span><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Lyže</span></label>
+            <label class="chip"><input type="checkbox" name="gear" value="snowboard"><span><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Snowboard</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Čo treba spraviť?</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="svc" value="voskovanie" checked><span><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Voskovanie</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="brúsenie hrán"><span><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Brúsenie hrán</span></label>
+            <label class="chip"><input type="checkbox" name="svc" value="oprava sklznice"><span><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Oprava sklznice</span></label>
+          </div>
+        </fieldset>
+        <div class="row2">
+          <div class="field">
+            <label for="o-count">Koľko kusov?</label>
+            <div class="stepper">
+              <button type="button" data-step="-1" aria-label="O jeden kus menej">−</button>
+              <input id="o-count" name="count" type="number" inputmode="numeric" min="1" max="20" value="1">
+              <button type="button" data-step="1" aria-label="O jeden kus viac">+</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="o-when">Kedy to potrebuješ? <span class="opt">(nepovinné)</span></label>
+            <input id="o-when" name="when" type="text" autocomplete="off" placeholder="napr. do piatka">
+          </div>
+        </div>
+        <div class="field">
+          <label for="o-note">Poznámka <span class="opt">(nepovinné)</span></label>
+          <textarea id="o-note" name="note" rows="2" placeholder="Značka, dĺžka, stav sklznice…"></textarea>
+        </div>
+        <div class="preview">
+          <div class="preview-top">
+            <p class="preview-h" id="o-msg-h">Tvoja správa</p>
+            <button class="copy-btn" type="button" id="o-copy"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg>Kopírovať</button>
+          </div>
+          <p class="preview-t" id="o-msg" aria-labelledby="o-msg-h"></p>
+        </div>
+        <a class="btn btn-ink btn-block" id="o-send" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>Skopírovať a otvoriť Instagram</a>
+        <p class="order-foot">Otvorí sa chat s @urbanwaxing – správu stačí vložiť a odoslať.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec" id="kontakt" aria-labelledby="kontakt-h">
+    <div class="wrap contact">
+      <div>
+        <p class="kicker">Kontakt</p>
+        <h2 class="display h2" id="kontakt-h">Nájdeš ma v&nbsp;Sokolovciach</h2>
+        <p class="sec-lead">Lokálny servis pre Sokolovce a okolie. Presné miesto a čas odovzdania výbavy dohodneme v správe.</p>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Napísať správu</a>
+          <a class="btn btn-line" href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>@urbanwaxing</a>
+        </div>
+      </div>
+      <a class="map-card" href="https://www.google.com/maps/search/?api=1&amp;query=Sokolovce" target="_blank" rel="noopener" aria-label="Sokolovce, okres Piešťany – otvoriť v Mapách Google">
+        <svg class="topo" viewBox="0 0 400 275" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M-20 60C60 20 120 90 200 60s150-50 230-10"/>
+          <path d="M-20 95c80-40 140 30 220 0s150-50 230-10"/>
+          <path d="M-20 130c80-40 140 30 220 0s150-50 230-10"/>
+          <path d="M-20 165c80-40 140 30 220 0s150-50 230-10"/>
+          <path d="M-20 200c80-40 140 30 220 0s150-50 230-10"/>
+          <path d="M-20 235c80-40 140 30 220 0s150-50 230-10"/>
+          <ellipse cx="200" cy="118" rx="70" ry="34"/>
+          <ellipse cx="200" cy="118" rx="38" ry="17"/>
+        </svg>
+        <span class="map-pin" aria-hidden="true"><svg class="i"><use href="#i-pin"/></svg></span>
+        <span class="map-label">
+          <span><b>Sokolovce</b><small>okres Piešťany</small></span>
+          <span class="map-go">Otvoriť v Mapách <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <div>
+      <img src="img/logo-white.png" width="456" height="77" alt="Urban Waxing" loading="lazy">
+      <p>Prémiové voskovanie lyží &amp; snowboardov · Sokolovce</p>
+    </div>
+    <nav aria-label="Odkazy v pätičke">
+      <a href="#sluzby">Služby</a>
+      <a href="#pred-po">Pred / po</a>
+      <a href="#objednavka">Objednávka</a>
+      <a href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <p class="ftr-bottom">© 2026 Urban Waxing · Fotky a videá: @urbanwaxing</p>
+  </div>
+</footer>
+
+<p class="toast" id="toast" role="status" aria-live="polite"></p>
+
+<script>
+(() => {
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.classList.toggle('is-scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Before / after toggles
+  const cards = [...document.querySelectorAll('.ba')];
+  const setState = (card, state, byUser) => {
+    card.dataset.state = state;
+    if (byUser) card.dataset.touched = '1';
+    card.querySelectorAll('[data-show]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.show === state)));
+  };
+  cards.forEach(card => {
+    card.querySelectorAll('[data-show]').forEach(b => b.addEventListener('click', e => {
+      e.stopPropagation();
+      setState(card, b.dataset.show, true);
+    }));
+    card.querySelector('.ba-media').addEventListener('click', () => setState(card, card.dataset.state === 'po' ? 'pred' : 'po', true));
+  });
+  // Show "pred" first and flip to "po" once the card is on screen.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      io.unobserve(en.target);
+      setTimeout(() => { if (!en.target.dataset.touched) setState(en.target, 'po'); }, 900);
+    }), { threshold: 0.6 });
+    cards.forEach(c => { setState(c, 'pred'); io.observe(c); });
+  }
+
+  // Order message builder
+  const form = document.getElementById('order');
+  const out = document.getElementById('o-msg');
+  const count = document.getElementById('o-count');
+  const clamp = v => Math.max(1, Math.min(20, parseInt(v, 10) || 1));
+  const checked = name => [...form.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
+  const build = () => {
+    const gear = checked('gear');
+    const svc = checked('svc');
+    const when = form.elements.when.value.trim();
+    const note = form.elements.note.value.trim();
+    const lines = [
+      'Ahoj, mám záujem o servis.',
+      `Výbava: ${gear.length ? gear.join(' + ') : 'upresním'} (${clamp(count.value)} ks)`,
+      `Služby: ${svc.length ? svc.join(', ') : 'poraď mi, čo treba'}`
+    ];
+    if (when) lines.push(`Kedy: ${when}`);
+    if (note) lines.push(`Poznámka: ${note}`);
+    lines.push('Vďaka!');
+    return lines.join('\n');
+  };
+  const render = () => { out.textContent = build(); };
+  form.addEventListener('input', render);
+  form.addEventListener('change', () => { count.value = clamp(count.value); render(); });
+  form.addEventListener('submit', e => e.preventDefault());
+  form.querySelectorAll('[data-step]').forEach(b => b.addEventListener('click', () => {
+    count.value = clamp(clamp(count.value) + Number(b.dataset.step));
+    render();
+  }));
+  render();
+
+  const toast = document.getElementById('toast');
+  let timer;
+  const say = text => {
+    toast.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(() => toast.classList.remove('show'), 3500);
+  };
+  const copy = text => {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).catch(() => {});
+      return true;
+    }
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      const ok = document.execCommand('copy');
+      ta.remove();
+      return ok;
+    } catch { return false; }
+  };
+  document.getElementById('o-copy').addEventListener('click', () => say(copy(build()) ? 'Správa je skopírovaná.' : 'Skopíruj si správu z náhľadu.'));
+  document.getElementById('o-send').addEventListener('click', () => say(copy(build()) ? 'Správa je skopírovaná – vlož ju do chatu.' : 'Skopíruj si správu z náhľadu.'));
+})();
+</script>
+</body>
+</html>
