@@ -47,6 +47,8 @@ p{text-wrap:pretty}
 .skip{position:absolute;left:-9999px;top:10px;z-index:100;background:var(--ink);color:#fff;padding:12px 16px;border-radius:12px;font-weight:700}
 .skip:focus{left:16px}
 :focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+/* single-column phones: long words must not widen the grid track past the screen (desktop columns rely on min-content) */
+@media (max-width:759px){.hero-in>*,.proc>*,.duo>*,.order>*,.contact>*{min-width:0}}
 .display{font-weight:800;font-stretch:118%;text-transform:uppercase;line-height:.98;letter-spacing:-.012em}
 
 /* Header */
@@ -62,7 +64,7 @@ p{text-wrap:pretty}
 @media (min-width:880px){.nav{display:flex}.hdr .btn{margin-left:6px}.brand img{height:33px}}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:1.5px solid transparent;font:inherit;font-weight:700;font-stretch:106%;font-size:1rem;line-height:1.2;text-decoration:none;cursor:pointer;transition:transform .15s,background-color .2s,border-color .2s,color .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:1.5px solid transparent;font:inherit;font-weight:700;font-stretch:106%;font-size:1rem;line-height:1.2;text-align:center;text-decoration:none;cursor:pointer;transition:transform .15s,background-color .2s,border-color .2s,color .2s}
 .btn:active{transform:translateY(1px)}
 .btn-ink{background:var(--ink);color:#fff}
 .btn-ink:hover{background:var(--ink-3)}
@@ -78,7 +80,8 @@ p{text-wrap:pretty}
 @media (min-width:960px){.hero{padding-top:52px}.hero-in{grid-template-columns:1.12fr .88fr;gap:56px}}
 .pill{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(14,17,20,.08);font-size:.9rem;font-weight:600}
 .dot{width:8px;height:8px;border-radius:50%;background:#178a4a;box-shadow:0 0 0 4px rgba(23,138,74,.18)}
-.hero h1{margin:0;font-size:clamp(2.2rem,5.3vw,4.35rem)}
+/* min() keeps the longest word (SNOWBOARDOV) inside the column below ~390 px */
+.hero h1{margin:0;font-size:clamp(min(2.2rem,(100vw - 32px)/10.2),5.3vw,4.35rem)}
 .hero h1 span{display:block;color:var(--acc)}
 .lead{margin:22px 0 30px;max-width:34em;color:var(--muted);font-size:clamp(1.06rem,1.35vw,1.2rem)}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
@@ -109,7 +112,7 @@ p{text-wrap:pretty}
 .sec-head{max-width:740px;margin-bottom:clamp(32px,4vw,52px)}
 .kicker{margin:0 0 14px;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
 .sec-ink .kicker{color:var(--frost)}
-.h2{margin:0;font-size:clamp(1.85rem,4vw,3.05rem)}
+.h2{margin:0;font-size:clamp(min(1.85rem,(100vw - 32px)/11.5),4vw,3.05rem)}
 .sec-lead{margin:18px 0 0;max-width:40em;color:var(--muted);font-size:1.1rem}
 .sec-ink .sec-lead{color:var(--mist)}
 
@@ -289,15 +292,15 @@ p{text-wrap:pretty}
   <section class="hero" id="top" aria-labelledby="hero-h">
     <div class="wrap hero-in">
       <div class="hero-copy">
-        <p class="pill"><span class="dot" aria-hidden="true"></span>Sezóna 2026/27 · prijímam objednávky</p>
+        <p class="pill"><span class="dot" aria-hidden="true"></span>Sezóna 2026/27&nbsp;· prijímam objednávky</p>
         <h1 class="display" id="hero-h">Prémiové voskovanie <span>lyží &amp; snowboardov</span></h1>
-        <p class="lead">Precízny servis pre tých, ktorí chcú maximálny sklz a výkon na svahu. Ručná práca, žiadna pásová výroba – každý pár riešim individuálne.</p>
+        <p class="lead">Precízny servis pre tých, ktorí chcú maximálny sklz a&nbsp;výkon na svahu. Ručná práca, žiadna pásová výroba&nbsp;– každý pár riešim individuálne.</p>
         <div class="cta-row">
           <a class="btn btn-ink" href="#objednavka">Objednať servis <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn-line" href="#pred-po">Pozrieť pred / po</a>
         </div>
         <ul class="facts">
-          <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Sokolovce a okolie</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Sokolovce a&nbsp;okolie</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-snow"/></svg>Lyže aj snowboardy</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-hand"/></svg>Ručná práca od roku 2023</li>
         </ul>
@@ -322,13 +325,13 @@ p{text-wrap:pretty}
       <div class="sec-head">
         <p class="kicker">Služby</p>
         <h2 class="display h2" id="sluzby-h">Lyže a&nbsp;snowboard pripravím kompletne</h2>
-        <p class="sec-lead">Okrem voskovania ponúkam aj brúsenie hrán a opravy sklznice, takže sa o tvoju výbavu môžeme postarať od A po Z.</p>
+        <p class="sec-lead">Okrem voskovania ponúkam aj brúsenie hrán a&nbsp;opravy sklznice, takže sa o&nbsp;tvoju výbavu môžeme postarať od A&nbsp;po Z.</p>
       </div>
       <div class="cards3">
         <article class="svc" data-no="01">
           <span class="svc-ico"><svg class="i" aria-hidden="true"><use href="#i-iron"/></svg></span>
           <h3>Voskovanie</h3>
-          <p>Starý vosok von, sklznica odmastená, nový vosok zažehlený a vykefovaný. Ručne, pár po páre.</p>
+          <p>Starý vosok von, sklznica odmastená, nový vosok zažehlený a&nbsp;vykefovaný. Ručne, pár po páre.</p>
           <ul class="ticks">
             <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Lepší sklz</li>
             <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Dlhšia životnosť sklznice</li>
@@ -337,7 +340,7 @@ p{text-wrap:pretty}
         <article class="svc" data-no="02">
           <span class="svc-ico"><svg class="i" aria-hidden="true"><use href="#i-edge"/></svg></span>
           <h3>Brúsenie hrán</h3>
-          <p>Hrany, ktoré držia v oblúku. Tam, kde si stroj neporadí, prichádza ručná práca.</p>
+          <p>Hrany, ktoré držia v&nbsp;oblúku. Tam, kde si stroj neporadí, prichádza ručná práca.</p>
           <ul class="ticks">
             <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Istota na tvrdom snehu</li>
             <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Lyže aj snowboardy</li>
@@ -346,14 +349,14 @@ p{text-wrap:pretty}
         <article class="svc" data-no="03">
           <span class="svc-ico"><svg class="i" aria-hidden="true"><use href="#i-patch"/></svg></span>
           <h3>Opravy sklznice</h3>
-          <p>Ryhy a poškodenia sklznice opravím, aby bola výbava pripravená na celú sezónu.</p>
+          <p>Ryhy a&nbsp;poškodenia sklznice opravím, aby bola výbava pripravená na celú sezónu.</p>
           <ul class="ticks">
-            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Nová v sezóne 2026/27</li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Spolu s voskovaním</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Nová v&nbsp;sezóne 2026/27</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Spolu s&nbsp;voskovaním</li>
           </ul>
         </article>
       </div>
-      <p class="note"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Cenu a termín dohodneme v správe na Instagrame.</p>
+      <p class="note"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Cenu a&nbsp;termín dohodneme v&nbsp;správe na Instagrame.</p>
     </div>
   </section>
 
@@ -362,7 +365,7 @@ p{text-wrap:pretty}
       <div class="sec-head">
         <p class="kicker">Pred / po</p>
         <h2 class="display h2" id="ba-h">Rozdiel vidno na prvý pohľad</h2>
-        <p class="sec-lead">Skutočné lyže a snowboardy zákazníkov. Prepni si <b>Pred</b> a <b>Po</b> – alebo ťukni na fotku.</p>
+        <p class="sec-lead">Skutočné lyže a&nbsp;snowboardy zákazníkov. Prepni si <b>Pred</b> a&nbsp;<b>Po</b>&nbsp;– alebo ťukni na fotku.</p>
       </div>
       <div class="ba-grid">
         <article class="ba" data-state="po">
@@ -375,7 +378,7 @@ p{text-wrap:pretty}
             </div>
           </div>
           <h3>Snowboardy pripravené na jazdu</h3>
-          <p>Voskovanie a servis · február 2026</p>
+          <p>Voskovanie a&nbsp;servis&nbsp;· február 2026</p>
         </article>
         <article class="ba" data-state="po">
           <div class="ba-media">
@@ -387,7 +390,7 @@ p{text-wrap:pretty}
             </div>
           </div>
           <h3>Predĺženie životnosti sklznice</h3>
-          <p>Voskovanie lyží · január 2026</p>
+          <p>Voskovanie lyží&nbsp;· január 2026</p>
         </article>
         <article class="ba" data-state="po">
           <div class="ba-media">
@@ -398,7 +401,7 @@ p{text-wrap:pretty}
               <button type="button" data-show="po" aria-pressed="true">Po</button>
             </div>
           </div>
-          <h3>Rok 2023 – prvé premeny sklzníc</h3>
+          <h3>Rok 2023&nbsp;– prvé premeny sklzníc</h3>
           <p>Dnes? Rovnaký štandard, viac skúseností.</p>
         </article>
       </div>
@@ -415,7 +418,7 @@ p{text-wrap:pretty}
           <li><b>Odstránenie zvyškového vosku</b><span>Starý, zašpinený vosok dole zo sklznice.</span></li>
           <li><b>Odmastenie</b><span>Čistý povrch, aby nový vosok dobre priľnul.</span></li>
           <li><b>Aplikácia nového vosku</b><span>Čerstvý vosok na celú plochu sklznice.</span></li>
-          <li><b>Zažehlenie</b><span>Žehlička vosok roztopí a zapracuje do sklznice.</span></li>
+          <li><b>Zažehlenie</b><span>Žehlička vosok roztopí a&nbsp;zapracuje do sklznice.</span></li>
           <li><b>Odstránenie prebytočného vosku</b><span>Po vychladnutí zoškrabem, čo je navyše.</span></li>
           <li><b>Kefovanie dvoma druhmi vlasov</b><span>Na záver kefy, ktoré sklznicu doladia pre lepší sklz.</span></li>
         </ol>
@@ -447,7 +450,7 @@ p{text-wrap:pretty}
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>dlhšiu životnosť sklznice</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>istotu, že servis je spravený poriadne</li>
         </ul>
-        <p>Či jazdíš na lyžiach alebo na snowboarde, rekreačne alebo častejšie – kvalitná príprava na svah robí rozdiel.</p>
+        <p>Či jazdíš na lyžiach alebo na snowboarde, rekreačne alebo častejšie&nbsp;– kvalitná príprava na svah robí rozdiel.</p>
       </div>
       <div class="card story">
         <svg class="peaks" viewBox="0 0 200 120" aria-hidden="true"><path d="M0 120 62 30l28 34L128 0l72 120z"/></svg>
@@ -465,11 +468,11 @@ p{text-wrap:pretty}
       <div>
         <p class="kicker">Objednávka</p>
         <h2 class="display h2" id="obj-h">Objednaj servis cez Instagram</h2>
-        <p class="sec-lead">Objednávky a termíny riešim v správach. Vyklikaj, čo potrebuješ – správu pripravím za teba, stačí ju vložiť do chatu.</p>
+        <p class="sec-lead">Objednávky a&nbsp;termíny riešim v&nbsp;správach. Vyklikaj, čo potrebuješ&nbsp;– správu pripravím za teba, stačí ju vložiť do chatu.</p>
         <ol class="how">
           <li><b>Napíš správu</b><br><span>na Instagram @urbanwaxing</span></li>
-          <li><b>Dohodneme termín</b><br><span>a cenu podľa toho, čo treba spraviť</span></li>
-          <li><b>Výbavu odovzdáš</b><br><span>v Sokolovciach</span></li>
+          <li><b>Dohodneme termín</b><br><span>a&nbsp;cenu podľa toho, čo treba spraviť</span></li>
+          <li><b>Výbavu odovzdáš</b><br><span>v&nbsp;Sokolovciach</span></li>
           <li><b>Vyzdvihneš ju pripravenú</b><br><span>na prvú jazdu</span></li>
         </ol>
       </div>
@@ -514,8 +517,8 @@ p{text-wrap:pretty}
           </div>
           <p class="preview-t" id="o-msg" aria-labelledby="o-msg-h"></p>
         </div>
-        <a class="btn btn-ink btn-block" id="o-send" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>Skopírovať a otvoriť Instagram</a>
-        <p class="order-foot">Otvorí sa chat s @urbanwaxing – správu stačí vložiť a odoslať.</p>
+        <a class="btn btn-ink btn-block" id="o-send" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>Skopírovať a&nbsp;otvoriť Instagram</a>
+        <p class="order-foot">Otvorí sa chat s&nbsp;@urbanwaxing&nbsp;– správu stačí vložiť a&nbsp;odoslať.</p>
       </form>
     </div>
   </section>
@@ -525,7 +528,7 @@ p{text-wrap:pretty}
       <div>
         <p class="kicker">Kontakt</p>
         <h2 class="display h2" id="kontakt-h">Nájdeš ma v&nbsp;Sokolovciach</h2>
-        <p class="sec-lead">Lokálny servis pre Sokolovce a okolie. Presné miesto a čas odovzdania výbavy dohodneme v správe.</p>
+        <p class="sec-lead">Lokálny servis pre Sokolovce a&nbsp;okolie. Presné miesto a&nbsp;čas odovzdania výbavy dohodneme v&nbsp;správe.</p>
         <div class="cta-row">
           <a class="btn btn-ink" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Napísať správu</a>
           <a class="btn btn-line" href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>@urbanwaxing</a>
@@ -544,8 +547,8 @@ p{text-wrap:pretty}
         </svg>
         <span class="map-pin" aria-hidden="true"><svg class="i"><use href="#i-pin"/></svg></span>
         <span class="map-label">
-          <span><b>Sokolovce</b><small>okres Piešťany</small></span>
-          <span class="map-go">Otvoriť v Mapách <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <span><b>Sokolovce</b> <small>okres Piešťany</small></span>
+          <span class="map-go">Otvoriť v&nbsp;Mapách <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </span>
       </a>
     </div>
@@ -556,7 +559,7 @@ p{text-wrap:pretty}
   <div class="wrap ftr-in">
     <div>
       <img src="img/logo-white.png" width="456" height="77" alt="Urban Waxing" loading="lazy">
-      <p>Prémiové voskovanie lyží &amp; snowboardov · Sokolovce</p>
+      <p>Prémiové voskovanie lyží &amp;&nbsp;snowboardov&nbsp;· Sokolovce</p>
     </div>
     <nav aria-label="Odkazy v pätičke">
       <a href="#sluzby">Služby</a>
@@ -564,7 +567,7 @@ p{text-wrap:pretty}
       <a href="#objednavka">Objednávka</a>
       <a href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener">Instagram</a>
     </nav>
-    <p class="ftr-bottom">© 2026 Urban Waxing · Fotky a videá: @urbanwaxing</p>
+    <p class="ftr-bottom">© 2026 Urban Waxing&nbsp;· Fotky a&nbsp;videá: @urbanwaxing</p>
   </div>
 </footer>
 
@@ -575,7 +578,7 @@ p{text-wrap:pretty}
   const hdr = document.getElementById('hdr');
   const onScroll = () => hdr.classList.toggle('is-scrolled', scrollY > 8);
   addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  requestAnimationFrame(onScroll);
 
   // Before / after toggles
   const cards = [...document.querySelectorAll('.ba')];
@@ -591,13 +594,14 @@ p{text-wrap:pretty}
     }));
     card.querySelector('.ba-media').addEventListener('click', () => setState(card, card.dataset.state === 'po' ? 'pred' : 'po', true));
   });
-  // Show "pred" first and flip to "po" once the card is on screen.
+  // Show "pred" first and flip to "po" once the card's top reaches the upper 65 % of the screen
+  // (a ratio threshold never fires when the card is taller than a landscape phone screen).
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => entries.forEach(en => {
       if (!en.isIntersecting) return;
       io.unobserve(en.target);
       setTimeout(() => { if (!en.target.dataset.touched) setState(en.target, 'po'); }, 900);
-    }), { threshold: 0.6 });
+    }), { rootMargin: '0px 0px -35% 0px' });
     cards.forEach(c => { setState(c, 'pred'); io.observe(c); });
   }
 
@@ -640,10 +644,10 @@ p{text-wrap:pretty}
     clearTimeout(timer);
     timer = setTimeout(() => toast.classList.remove('show'), 3500);
   };
-  const copy = text => {
+  // Clipboard API first; if it is missing or refuses (some in-app browsers), fall back to execCommand.
+  const copy = async text => {
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).catch(() => {});
-      return true;
+      try { await navigator.clipboard.writeText(text); return true; } catch {}
     }
     try {
       const ta = document.createElement('textarea');
@@ -658,8 +662,8 @@ p{text-wrap:pretty}
       return ok;
     } catch { return false; }
   };
-  document.getElementById('o-copy').addEventListener('click', () => say(copy(build()) ? 'Správa je skopírovaná.' : 'Skopíruj si správu z náhľadu.'));
-  document.getElementById('o-send').addEventListener('click', () => say(copy(build()) ? 'Správa je skopírovaná – vlož ju do chatu.' : 'Skopíruj si správu z náhľadu.'));
+  document.getElementById('o-copy').addEventListener('click', async () => say(await copy(build()) ? 'Správa je skopírovaná.' : 'Skopíruj si správu z náhľadu.'));
+  document.getElementById('o-send').addEventListener('click', async () => say(await copy(build()) ? 'Správa je skopírovaná – vlož ju do chatu.' : 'Skopíruj si správu z náhľadu.'));
 })();
 </script>
 </body>

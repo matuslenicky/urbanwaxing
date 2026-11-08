@@ -17,6 +17,9 @@ let html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 // Preloads are useless once fonts are inline.
 html = html.replace(/<link rel="preload"[^>]*>\n/g, '');
 html = html.replace(/url\((fonts\/[^)]+)\)/g, (_, rel) => `url(${dataUri(rel)})`);
+// Without a preload the inline font is decoded only after the first paint; the wider display face
+// then resizes the desktop hero columns (CLS ~0.14). Start decoding both subsets right after the CSS.
+html = html.replace('</style>', '</style>\n<script>document.fonts&&["Ab","čž"].forEach(t=>document.fonts.load("800 1em Archivo",t))</script>');
 
 // For each responsive image keep only the 800 px file (or the single src) inline.
 html = html.replace(/<img\b[^>]*>/g, tag => {
