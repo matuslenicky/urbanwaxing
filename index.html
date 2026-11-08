@@ -77,11 +77,12 @@ p{text-wrap:pretty}
 /* Hero */
 .hero{position:relative;background:var(--ice);padding:28px 0 clamp(70px,9vw,130px);overflow:hidden}
 .hero-in{position:relative;z-index:1;display:grid;gap:36px;align-items:center}
-@media (min-width:960px){.hero{padding-top:52px}.hero-in{grid-template-columns:1.12fr .88fr;gap:56px}}
+@media (min-width:960px){.hero{padding-top:52px}.hero-in{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:56px}}
 .pill{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(14,17,20,.08);font-size:.9rem;font-weight:600}
 .dot{width:8px;height:8px;border-radius:50%;background:#178a4a;box-shadow:0 0 0 4px rgba(23,138,74,.18)}
 /* min() keeps the longest word (SNOWBOARDOV) inside the column below ~390 px */
 .hero h1{margin:0;font-size:clamp(min(2.2rem,(100vw - 32px)/10.2),5.3vw,4.35rem)}
+@media (min-width:960px){.hero h1{font-size:min(3.9rem,5.6vw - 8px)}}
 .hero h1 span{display:block;color:var(--acc)}
 .lead{margin:22px 0 30px;max-width:34em;color:var(--muted);font-size:clamp(1.06rem,1.35vw,1.2rem)}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
