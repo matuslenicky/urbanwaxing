@@ -122,9 +122,9 @@ p{text-wrap:pretty}
 @media (min-width:780px){.cards3{grid-template-columns:repeat(3,1fr);gap:20px}}
 .svc{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 26px 26px}
 .svc::before{content:attr(data-no);position:absolute;top:24px;right:26px;font-weight:800;font-stretch:122%;font-size:1.7rem;line-height:1;color:rgba(14,17,20,.14)}
-.svc-ico{display:grid;place-items:center;width:54px;height:54px;margin-bottom:22px;border-radius:15px;background:var(--ice)}
-.svc-ico .i{width:28px;height:28px;stroke-width:1.8}
-.svc h3{margin:0 0 10px;font-size:1.35rem;font-weight:800;font-stretch:112%}
+.svc-head{display:flex;align-items:center;gap:12px;margin:0 0 14px;padding-right:48px}
+.svc-head .i{width:30px;height:30px;stroke-width:1.8;color:var(--acc)}
+.svc h3{margin:0;font-size:1.35rem;font-weight:800;font-stretch:112%}
 .svc p{margin:0 0 20px;color:var(--muted)}
 .ticks{list-style:none;padding:0;margin:auto 0 0;display:grid;gap:8px;font-weight:600;font-size:.95rem}
 .ticks li{display:flex;align-items:center;gap:10px}
@@ -208,7 +208,7 @@ p{text-wrap:pretty}
 @media (min-width:520px){.row2{grid-template-columns:auto 1fr}}
 .field{display:flex;flex-direction:column;margin-bottom:18px;min-width:0}
 .field input[type="text"],.field textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:12px;border:1.5px solid rgba(14,17,20,.22);background:var(--snow);color:var(--ink);font:inherit;font-size:1rem;resize:vertical}
-.field input::placeholder,.field textarea::placeholder{color:#69757e}
+.field input::placeholder,.field textarea::placeholder{color:#5d6972}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(29,100,135,.25)}
 .stepper{display:inline-flex;align-items:center;height:48px;border:1.5px solid rgba(14,17,20,.22);border-radius:12px;background:var(--snow);overflow:hidden;align-self:flex-start}
 .stepper button{width:46px;height:100%;border:0;background:transparent;font:inherit;font-size:1.35rem;font-weight:600;color:var(--ink);cursor:pointer}
@@ -330,8 +330,7 @@ p{text-wrap:pretty}
       </div>
       <div class="cards3">
         <article class="svc" data-no="01">
-          <span class="svc-ico"><svg class="i" aria-hidden="true"><use href="#i-iron"/></svg></span>
-          <h3>Voskovanie</h3>
+          <div class="svc-head"><svg class="i" aria-hidden="true"><use href="#i-iron"/></svg><h3>Voskovanie</h3></div>
           <p>Starý vosok von, sklznica odmastená, nový vosok zažehlený a&nbsp;vykefovaný. Ručne, pár po páre.</p>
           <ul class="ticks">
             <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Lepší sklz</li>
@@ -339,8 +338,7 @@ p{text-wrap:pretty}
           </ul>
         </article>
         <article class="svc" data-no="02">
-          <span class="svc-ico"><svg class="i" aria-hidden="true"><use href="#i-edge"/></svg></span>
-          <h3>Brúsenie hrán</h3>
+          <div class="svc-head"><svg class="i" aria-hidden="true"><use href="#i-edge"/></svg><h3>Brúsenie hrán</h3></div>
           <p>Hrany, ktoré držia v&nbsp;oblúku. Tam, kde si stroj neporadí, prichádza ručná práca.</p>
           <ul class="ticks">
             <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Istota na tvrdom snehu</li>
@@ -348,8 +346,7 @@ p{text-wrap:pretty}
           </ul>
         </article>
         <article class="svc" data-no="03">
-          <span class="svc-ico"><svg class="i" aria-hidden="true"><use href="#i-patch"/></svg></span>
-          <h3>Opravy sklznice</h3>
+          <div class="svc-head"><svg class="i" aria-hidden="true"><use href="#i-patch"/></svg><h3>Opravy sklznice</h3></div>
           <p>Ryhy a&nbsp;poškodenia sklznice opravím, aby bola výbava pripravená na celú sezónu.</p>
           <ul class="ticks">
             <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Nová v&nbsp;sezóne 2026/27</li>
