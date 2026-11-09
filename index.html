@@ -20,7 +20,7 @@
 <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Urban Waxing","description":"Voskovanie lyží a snowboardov, brúsenie hrán a opravy sklznice. Ručná práca, lokálny servis v Sokolovciach.","image":"https://matuslenicky.github.io/urbanwaxing/img/og.jpg","url":"https://matuslenicky.github.io/urbanwaxing/","address":{"@type":"PostalAddress","streetAddress":"Hlohovecká 347/3","postalCode":"922 31","addressLocality":"Sokolovce","addressRegion":"Trnavský kraj","addressCountry":"SK"},"hasMap":"https://www.google.com/maps/search/?api=1&query=Hlohoveck%C3%A1+347%2F3%2C+922+31+Sokolovce","areaServed":"Sokolovce a okolie","sameAs":["https://www.instagram.com/urbanwaxing/"]}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Urban Waxing","description":"Voskovanie lyží a snowboardov, brúsenie hrán a opravy sklznice. Ručná práca, lokálny servis v Sokolovciach.","image":"https://matuslenicky.github.io/urbanwaxing/img/og.jpg","url":"https://matuslenicky.github.io/urbanwaxing/","address":{"@type":"PostalAddress","streetAddress":"Hlohovecká 347/3","postalCode":"922 31","addressLocality":"Sokolovce","addressRegion":"Trnavský kraj","addressCountry":"SK"},"hasMap":"https://www.google.com/maps/search/?api=1&query=Hlohoveck%C3%A1+347%2F3%2C+922+31+Sokolovce","areaServed":"Sokolovce a okolie","sameAs":["https://www.instagram.com/urbanwaxing/","https://www.facebook.com/profile.php?id=61587166323284"]}
 </script>
 <style>
 @font-face{font-family:Archivo;font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(fonts/archivo-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -204,8 +204,11 @@ p{text-wrap:pretty}
 .copy-btn:hover{background:rgba(14,17,20,.07)}
 .copy-btn .i{width:16px;height:16px}
 .preview-t{margin:0;white-space:pre-line;font-size:.98rem;line-height:1.55;overflow-wrap:anywhere}
+.send-alt{margin-top:10px}
 .order-foot{margin:12px 0 0;text-align:center;font-size:.88rem;color:var(--muted)}
-.toast{position:fixed;left:50%;bottom:24px;z-index:80;max-width:calc(100% - 32px);padding:12px 18px;border-radius:12px;background:var(--ink);color:#fff;font-weight:600;opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity .25s,transform .25s}
+.note a,.sec-lead a{color:var(--ink);font-weight:600;text-underline-offset:3px}
+.note a:hover,.sec-lead a:hover{color:var(--acc)}
+.toast{position:fixed;left:50%;bottom:24px;z-index:80;width:max-content;max-width:calc(100% - 32px);padding:12px 18px;border-radius:12px;background:var(--ink);color:#fff;font-weight:600;opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity .25s,transform .25s}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 /* Contact */
@@ -250,6 +253,7 @@ p{text-wrap:pretty}
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8a4 4 0 0 1 3.4 3.4zM17.5 6.5h.01"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
   <symbol id="i-msg" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
   <symbol id="i-iron" viewBox="0 0 24 24"><path d="M2.5 18h19v-3.5A5.5 5.5 0 0 0 16 9H9.5a7 7 0 0 0-7 7z"/><path d="M10 9V6.5A1.5 1.5 0 0 1 11.5 5H19"/><path d="M6 21.5h12"/></symbol>
@@ -337,7 +341,7 @@ p{text-wrap:pretty}
           </ul>
         </article>
       </div>
-      <p class="note"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Cenu a&nbsp;termín dohodneme v&nbsp;správe na Instagrame alebo Facebooku.</p>
+      <p class="note"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg><span>Cenu a&nbsp;termín dohodneme v&nbsp;správe na <a href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener">Instagrame</a> alebo <a href="https://m.me/61587166323284" target="_blank" rel="noopener">Facebooku</a>.</span></p>
     </div>
   </section>
 
@@ -406,9 +410,9 @@ p{text-wrap:pretty}
       <div>
         <p class="kicker">Objednávka</p>
         <h2 class="display h2" id="obj-h">Objednaj servis cez správu</h2>
-        <p class="sec-lead">Objednávky a&nbsp;termíny vybavujem v&nbsp;správach na Instagrame alebo Facebooku. Vyklikaj, čo potrebuješ&nbsp;– správu pripravím za teba, stačí ju vložiť do chatu.</p>
+        <p class="sec-lead">Objednávky a&nbsp;termíny vybavujem v&nbsp;správach na <a href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener">Instagrame</a> alebo <a href="https://m.me/61587166323284" target="_blank" rel="noopener">Facebooku</a>. Vyklikaj, čo potrebuješ&nbsp;– správu pripravím za teba, stačí ju vložiť do chatu.</p>
         <ol class="how">
-          <li><b>Napíš správu</b><br><span>na Instagram @urbanwaxing alebo na Facebook</span></li>
+          <li><b>Napíš správu</b><br><span>na Instagram @urbanwaxing alebo na Facebook Urban Waxing</span></li>
           <li><b>Dohodneme termín</b><br><span>a&nbsp;cenu podľa toho, čo treba spraviť</span></li>
           <li><b>Výbavu odovzdáš</b><br><span>na Hlohoveckej 347/3 v&nbsp;Sokolovciach</span></li>
           <li><b>Vyzdvihneš ju pripravenú</b><br><span>na prvú jazdu</span></li>
@@ -455,8 +459,9 @@ p{text-wrap:pretty}
           </div>
           <p class="preview-t" id="o-msg" aria-labelledby="o-msg-h"></p>
         </div>
-        <a class="btn btn-ink btn-block" id="o-send" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>Skopírovať a&nbsp;otvoriť Instagram</a>
-        <p class="order-foot">Otvorí sa chat s&nbsp;@urbanwaxing&nbsp;– správu stačí vložiť a&nbsp;odoslať.</p>
+        <a class="btn btn-ink btn-block" id="o-send" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>Otvoriť Instagram</a>
+        <a class="btn btn-line btn-block send-alt" id="o-send-fb" href="https://m.me/61587166323284" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-fb"/></svg>Otvoriť Messenger</a>
+        <p class="order-foot">Správa sa sama skopíruje a&nbsp;otvorí sa chat s&nbsp;Urban Waxing&nbsp;– stačí ju vložiť a&nbsp;odoslať.</p>
       </form>
     </div>
   </section>
@@ -469,8 +474,8 @@ p{text-wrap:pretty}
         <p class="sec-lead">Lokálny servis pre Sokolovce a&nbsp;okolie. Čas odovzdania výbavy dohodneme v&nbsp;správe na Instagrame alebo Facebooku.</p>
         <address class="addr"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span><b>Hlohovecká 347/3</b><br>922&nbsp;31 Sokolovce</span></address>
         <div class="cta-row">
-          <a class="btn btn-ink" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Napísať správu</a>
-          <a class="btn btn-line" href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>@urbanwaxing</a>
+          <a class="btn btn-ink" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>Napísať na Instagram</a>
+          <a class="btn btn-line" href="https://m.me/61587166323284" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-fb"/></svg>Napísať na Facebook</a>
         </div>
       </div>
       <div class="map-card">
@@ -495,6 +500,7 @@ p{text-wrap:pretty}
       <a href="#pred-po">Pred / po</a>
       <a href="#objednavka">Objednávka</a>
       <a href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61587166323284" target="_blank" rel="noopener">Facebook</a>
     </nav>
     <p class="ftr-bottom">© 2026 Urban Waxing&nbsp;· Fotky: @urbanwaxing</p>
   </div>
@@ -592,7 +598,7 @@ p{text-wrap:pretty}
     } catch { return false; }
   };
   document.getElementById('o-copy').addEventListener('click', async () => say(await copy(build()) ? 'Správa je skopírovaná.' : 'Skopíruj si správu z náhľadu.'));
-  document.getElementById('o-send').addEventListener('click', async () => say(await copy(build()) ? 'Správa je skopírovaná – vlož ju do chatu.' : 'Skopíruj si správu z náhľadu.'));
+  document.querySelectorAll('#o-send, #o-send-fb').forEach(a => a.addEventListener('click', async () => say(await copy(build()) ? 'Správa je skopírovaná – vlož ju do chatu.' : 'Skopíruj si správu z náhľadu.')));
 })();
 </script>
 </body>
