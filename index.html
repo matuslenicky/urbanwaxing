@@ -87,7 +87,7 @@ p{text-wrap:pretty}
 .from{margin:24px 0 0;color:var(--muted);font-size:.98rem}
 .from b{color:var(--ink);font-weight:700}
 .hero-media{position:relative;margin:0}
-.hero-media .frame img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:45% 48%}
+.hero-media .frame img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 62%}
 @media (min-width:600px) and (max-width:959px){.hero-media .frame img{aspect-ratio:4/3}}
 @media (min-width:960px){.hero-media .frame img{aspect-ratio:4/5}}
 .seal{position:absolute;right:18px;bottom:18px;z-index:1;width:92px;height:92px;border-radius:50%;box-shadow:0 16px 30px -14px rgba(0,0,0,.6)}
@@ -143,9 +143,14 @@ p{text-wrap:pretty}
 .gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 14px}
 .tile{display:flex;flex-direction:column;min-width:0;margin:0}
 .tile.full,.tile-wide{grid-column:1/-1}
-.tile-wide{order:1}
 .tile-media{aspect-ratio:4/5}
-.tile-media > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile-media > img,.tile-media > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile-media > video{background:var(--photo);cursor:pointer}
+.vid-btn{position:absolute;right:16px;bottom:16px;z-index:1;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.94);color:var(--ink);cursor:pointer;box-shadow:0 10px 24px -12px rgba(0,0,0,.5)}
+.vid-btn[hidden]{display:none}
+.vid-btn .i{width:18px;height:18px;fill:currentColor;stroke:none}
+.vid-btn .i-play,.vid-btn.is-paused .i-pause{display:none}
+.vid-btn.is-paused .i-play{display:block}
 .tile-wide .tile-media{aspect-ratio:3/2}
 .tile-cap{margin-top:14px}
 .tile h3{font-size:1.1rem;letter-spacing:-.01em}
@@ -154,7 +159,7 @@ p{text-wrap:pretty}
 @media (min-width:600px){.tile.full{grid-column:auto}}
 @media (min-width:900px){
   .gal{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 22px}
-  .tile-wide{grid-column:span 2;order:0}
+  .tile-wide{grid-column:span 2}
   .tile-wide .tile-media{aspect-ratio:auto;flex:1 1 auto;min-height:280px}
 }
 .ba .tile-media{cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -294,7 +299,7 @@ p{text-wrap:pretty}
       </div>
       <figure class="hero-media">
         <div class="frame">
-          <img src="img/zehlicka-800.webp" srcset="img/zehlicka-480.webp 480w, img/zehlicka-800.webp 800w, img/zehlicka-1040.webp 1040w" sizes="(min-width: 960px) 470px, calc(100vw - 32px)" width="1040" height="1300" alt="Žehlička na vosk na sklznici snowboardu HMR v dielni" fetchpriority="high">
+          <img src="img/lyze-slnko-800.webp" srcset="img/lyze-slnko-480.webp 480w, img/lyze-slnko-800.webp 800w, img/lyze-slnko-1040.webp 1040w" sizes="(min-width: 960px) 470px, calc(100vw - 32px)" width="1040" height="1300" alt="Navoskované lyže položené sklznicou nahor na tráve, sklznica sa leskne vo večernom slnku" fetchpriority="high">
         </div>
         <img class="seal" src="img/uw-seal.webp" width="240" height="240" alt="">
       </figure>
@@ -389,7 +394,7 @@ p{text-wrap:pretty}
     <div class="wrap">
       <div class="sec-head split">
         <h2 class="h2" id="dielna-h">Z&nbsp;dielne</h2>
-        <p class="sec-lead">Skutočné lyže a&nbsp;snowboardy zákazníkov. Pri prvých dvoch si prepni Pred a&nbsp;Po alebo ťukni na fotku.</p>
+        <p class="sec-lead">Skutočné lyže a&nbsp;snowboardy zákazníkov a&nbsp;práca v&nbsp;dielni. Pri prvých dvoch si prepni Pred a&nbsp;Po alebo ťukni na fotku.</p>
       </div>
       <div class="gal">
         <article class="tile full ba" data-state="po">
@@ -429,13 +434,23 @@ p{text-wrap:pretty}
             <p>Čistá sklznica, aby vosk dobre držal</p>
           </figcaption>
         </figure>
-        <figure class="tile tile-wide">
+        <figure class="tile">
           <div class="tile-media frame">
-            <img src="img/seria-1040.webp" srcset="img/seria-640.webp 640w, img/seria-1040.webp 1040w" sizes="(min-width: 900px) 780px, calc(100vw - 32px)" width="1040" height="693" loading="lazy" decoding="async" alt="Snowboard Salomon a tri páry lyží položené sklznicou nahor na tráve">
+            <img src="img/zehlicka-800.webp" srcset="img/zehlicka-480.webp 480w, img/zehlicka-800.webp 800w" sizes="(min-width: 900px) 380px, calc(50vw - 23px)" width="800" height="1000" loading="lazy" decoding="async" alt="Žehlička na vosk na sklznici snowboardu HMR v dielni">
           </div>
           <figcaption class="tile-cap">
-            <h3>Jedna várka: snowboard a&nbsp;tri páry lyží</h3>
-            <p>Október 2026</p>
+            <h3>Zažehlenie vosku</h3>
+            <p>Žehlička vosk roztopí a&nbsp;zapracuje do sklznice</p>
+          </figcaption>
+        </figure>
+        <figure class="tile vid" data-video>
+          <div class="tile-media frame">
+            <video muted loop playsinline preload="none" data-poster="img/kefa-poster.webp" width="640" height="800" aria-label="Video: rotačná kefa na vŕtačke leští sklznicu snowboardu, odletujú zvyšky vosku"><source data-src="video/kefa.mp4" type="video/mp4"></video>
+            <button class="vid-btn is-paused" type="button" aria-label="Prehrať video"><svg class="i i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg><svg class="i i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z"/></svg></button>
+          </div>
+          <figcaption class="tile-cap">
+            <h3>Rotačná kefa</h3>
+            <p>Na záver sklznicu vykefuje do hladka</p>
           </figcaption>
         </figure>
         <figure class="tile">
@@ -445,6 +460,52 @@ p{text-wrap:pretty}
           <figcaption class="tile-cap">
             <h3>Škrabka</h3>
             <p>Prebytočný vosk dole, zostane len to, čo sklznica nasala</p>
+          </figcaption>
+        </figure>
+        <figure class="tile tile-wide">
+          <div class="tile-media frame">
+            <img src="img/seria-1040.webp" srcset="img/seria-640.webp 640w, img/seria-1040.webp 1040w" sizes="(min-width: 900px) 780px, calc(100vw - 32px)" width="1040" height="693" loading="lazy" decoding="async" alt="Snowboard Salomon a tri páry lyží položené sklznicou nahor na tráve">
+          </div>
+          <figcaption class="tile-cap">
+            <h3>Jedna várka: snowboard a&nbsp;tri páry lyží</h3>
+            <p>Október 2026</p>
+          </figcaption>
+        </figure>
+        <figure class="tile vid" data-video>
+          <div class="tile-media frame">
+            <video muted loop playsinline preload="none" data-poster="img/jazda-poster.webp" width="640" height="800" aria-label="Video: večerná jazda na snowboarde po osvetlenom svahu z pohľadu jazdca"><source data-src="video/jazda.mp4" type="video/mp4"></video>
+            <button class="vid-btn is-paused" type="button" aria-label="Prehrať video"><svg class="i i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg><svg class="i i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z"/></svg></button>
+          </div>
+          <figcaption class="tile-cap">
+            <h3>A&nbsp;potom na svah</h3>
+            <p>Večerná jazda, február 2026</p>
+          </figcaption>
+        </figure>
+        <figure class="tile">
+          <div class="tile-media frame">
+            <img src="img/lyze-stojan-800.webp" srcset="img/lyze-stojan-480.webp 480w, img/lyze-stojan-800.webp 800w" sizes="(min-width: 900px) 380px, calc(50vw - 23px)" width="800" height="1000" loading="lazy" decoding="async" alt="Tri páry lyží opreté sklznicou dopredu o stenu v dielni">
+          </div>
+          <figcaption class="tile-cap">
+            <h3>Lyže v&nbsp;dielni</h3>
+            <p>Každý pár zvlášť, ručne</p>
+          </figcaption>
+        </figure>
+        <figure class="tile">
+          <div class="tile-media frame">
+            <img src="img/snowboardy-800.webp" srcset="img/snowboardy-480.webp 480w, img/snowboardy-800.webp 800w" sizes="(min-width: 900px) 380px, calc(50vw - 23px)" width="800" height="1000" loading="lazy" decoding="async" alt="Snowboardy Lib Tech a Gravity opreté o stenu z OSB dosiek">
+          </div>
+          <figcaption class="tile-cap">
+            <h3>Lib Tech a&nbsp;Gravity</h3>
+            <p>Snowboardy na rade, marec 2026</p>
+          </figcaption>
+        </figure>
+        <figure class="tile">
+          <div class="tile-media frame">
+            <img src="img/salomon-800.webp" srcset="img/salomon-480.webp 480w, img/salomon-800.webp 800w" sizes="(min-width: 900px) 380px, calc(50vw - 23px)" width="800" height="1000" loading="lazy" decoding="async" alt="Snowboard Salomon opretý o stenu na slnku, sklznicou dopredu">
+          </div>
+          <figcaption class="tile-cap">
+            <h3>Salomon</h3>
+            <p>Október 2026</p>
           </figcaption>
         </figure>
       </div>
@@ -597,6 +658,59 @@ p{text-wrap:pretty}
       setTimeout(() => { if (!en.target.dataset.touched) setState(en.target, 'po'); }, 900);
     }), { rootMargin: '0px 0px -35% 0px' });
     cards.forEach(c => { setState(c, 'pred'); io.observe(c); });
+  }
+
+  // Workshop clips: silent loops that load and play only while on screen. Reduced motion or Save-Data
+  // keeps them on the poster until the visitor taps play (WCAG 2.2.2: the button pauses them too).
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches || (navigator.connection && navigator.connection.saveData);
+  const clips = [...document.querySelectorAll('[data-video]')].map(fig => {
+    const video = fig.querySelector('video');
+    const btn = fig.querySelector('.vid-btn');
+    const source = video.querySelector('source[data-src]');
+    const clip = { fig, video, btn, source, held: !!calm };
+    if (!source) { btn.hidden = true; return null; }
+    const sync = () => {
+      const playing = !video.paused;
+      btn.classList.toggle('is-paused', !playing);
+      btn.setAttribute('aria-label', playing ? 'Pozastaviť video' : 'Prehrať video');
+    };
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    const toggle = () => {
+      if (video.paused) { clip.held = false; load(clip); video.play().catch(() => {}); }
+      else { clip.held = true; video.pause(); }
+    };
+    btn.addEventListener('click', toggle);
+    video.addEventListener('click', toggle);
+    // The clips are fragmented MP4 (recorded in Chrome); if a browser does not honour "loop" on them, restart by hand.
+    video.addEventListener('ended', () => { video.currentTime = 0; video.play().catch(() => {}); });
+    return clip;
+  }).filter(Boolean);
+  const load = clip => {
+    if (clip.source.src) return;
+    clip.source.src = clip.source.dataset.src;
+    clip.video.load();
+  };
+  if ('IntersectionObserver' in window) {
+    const vio = new IntersectionObserver(entries => entries.forEach(en => {
+      const clip = clips.find(c => c.fig === en.target);
+      if (en.isIntersecting && en.intersectionRatio >= 0.35) {
+        if (!clip.held) { load(clip); clip.video.play().catch(() => {}); }
+      } else if (!clip.video.paused) {
+        clip.video.pause();
+      }
+    }), { threshold: [0, 0.35] });
+    clips.forEach(c => vio.observe(c.fig));
+    // Posters load only when a clip gets near the screen, so they do not compete with the first photo.
+    const pio = new IntersectionObserver(entries => entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const v = en.target.querySelector('video');
+      if (v.dataset.poster) { v.poster = v.dataset.poster; delete v.dataset.poster; }
+      pio.unobserve(en.target);
+    }), { rootMargin: '600px 0px' });
+    document.querySelectorAll('[data-video]').forEach(f => pio.observe(f));
+  } else {
+    document.querySelectorAll('video[data-poster]').forEach(v => { v.poster = v.dataset.poster; });
   }
 
   // Order message builder with a rough price from the 2026/27 price list

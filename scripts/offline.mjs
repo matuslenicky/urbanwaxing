@@ -27,6 +27,9 @@ html = html.replace(/<img\b[^>]*>/g, tag => {
   return tag.replace(/\ssrc="(img\/[^"]+)"/, (_, rel) => ` src="${dataUri(rel)}"`);
 });
 html = html.replace(/href="(img\/(?:favicon|apple-touch-icon)\.png)"/g, (_, rel) => `href="${dataUri(rel)}"`);
+// Video posters are inlined; the clips themselves stay online-only (the page hides their play button without a source).
+html = html.replace(/(?:data-)?poster="(img\/[^"]+)"/g, (_, rel) => `poster="${dataUri(rel)}"`);
+html = html.replace(/<source data-src="video\/[^"]+"[^>]*>/g, '');
 
 const out = path.join(root, 'urbanwaxing.html');
 fs.writeFileSync(out, html);
