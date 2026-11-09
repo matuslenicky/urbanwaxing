@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Urban Waxing – voskovanie lyží a snowboardov · Sokolovce</title>
-<meta name="description" content="Prémiové voskovanie lyží a snowboardov, brúsenie hrán a opravy sklznice. Ručná práca, lokálny servis v Sokolovciach. Objednávky cez Instagram.">
+<meta name="description" content="Voskovanie lyží a snowboardov, brúsenie hrán a opravy sklznice. Ručná práca, lokálny servis v Sokolovciach. Objednávky cez Instagram alebo Facebook.">
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#dbeaef">
@@ -20,7 +20,7 @@
 <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Urban Waxing","description":"Prémiové voskovanie lyží a snowboardov, brúsenie hrán a opravy sklznice. Ručná práca, lokálny servis v Sokolovciach.","image":"https://matuslenicky.github.io/urbanwaxing/img/og.jpg","url":"https://matuslenicky.github.io/urbanwaxing/","address":{"@type":"PostalAddress","addressLocality":"Sokolovce","addressRegion":"Trnavský kraj","addressCountry":"SK"},"areaServed":"Sokolovce a okolie","sameAs":["https://www.instagram.com/urbanwaxing/"]}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Urban Waxing","description":"Voskovanie lyží a snowboardov, brúsenie hrán a opravy sklznice. Ručná práca, lokálny servis v Sokolovciach.","image":"https://matuslenicky.github.io/urbanwaxing/img/og.jpg","url":"https://matuslenicky.github.io/urbanwaxing/","address":{"@type":"PostalAddress","streetAddress":"Hlohovecká 347/3","postalCode":"922 31","addressLocality":"Sokolovce","addressRegion":"Trnavský kraj","addressCountry":"SK"},"hasMap":"https://www.google.com/maps/search/?api=1&query=Hlohoveck%C3%A1+347%2F3%2C+922+31+Sokolovce","areaServed":"Sokolovce a okolie","sameAs":["https://www.instagram.com/urbanwaxing/"]}
 </script>
 <style>
 @font-face{font-family:Archivo;font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(fonts/archivo-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -48,7 +48,7 @@ p{text-wrap:pretty}
 .skip:focus{left:16px}
 :focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 /* single-column phones: long words must not widen the grid track past the screen (desktop columns rely on min-content) */
-@media (max-width:759px){.hero-in>*,.proc>*,.duo>*,.order>*,.contact>*{min-width:0}}
+@media (max-width:759px){.hero-in>*,.duo>*,.order>*,.contact>*{min-width:0}}
 .display{font-weight:800;font-stretch:118%;text-transform:uppercase;line-height:.98;letter-spacing:-.012em}
 
 /* Header */
@@ -109,17 +109,15 @@ p{text-wrap:pretty}
 /* Sections */
 .sec{padding:clamp(64px,9vw,120px) 0}
 .sec-ice{background:var(--ice)}
-.sec-ink{background:var(--ink);color:#e8f0f3}
 .sec-head{max-width:740px;margin-bottom:clamp(32px,4vw,52px)}
 .kicker{margin:0 0 14px;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
-.sec-ink .kicker{color:var(--frost)}
 .h2{margin:0;font-size:clamp(min(1.85rem,(100vw - 32px)/11.5),4vw,3.05rem)}
 .sec-lead{margin:18px 0 0;max-width:40em;color:var(--muted);font-size:1.1rem}
-.sec-ink .sec-lead{color:var(--mist)}
 
 /* Services */
 .cards3{display:grid;gap:16px}
-@media (min-width:780px){.cards3{grid-template-columns:repeat(3,1fr);gap:20px}}
+/* 3 columns only from 900 px: below that the cards' min-content (icon + heading + number) is 825 px and the third card got clipped */
+@media (min-width:900px){.cards3{grid-template-columns:repeat(3,1fr);gap:20px}}
 .svc{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 26px 26px}
 .svc::before{content:attr(data-no);position:absolute;top:24px;right:26px;font-weight:800;font-stretch:122%;font-size:1.7rem;line-height:1;color:rgba(14,17,20,.14)}
 .svc-head{display:flex;align-items:center;gap:12px;margin:0 0 14px;padding-right:48px}
@@ -134,7 +132,11 @@ p{text-wrap:pretty}
 
 /* Before / after */
 .ba-grid{display:grid;gap:34px}
-@media (min-width:780px){.ba-grid{grid-template-columns:repeat(3,1fr);gap:22px}}
+@media (min-width:780px){.ba-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+@media (min-width:1000px){.ba-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}.ba-wrap .sec-head{margin-bottom:0}}
+.more{display:inline-flex;align-items:center;gap:8px;margin-top:22px;min-height:44px;font-weight:700;color:var(--ink);text-decoration:none}
+.more:hover{text-decoration:underline}
+.more .i{color:var(--acc)}
 .ba-media{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#c9d9e0;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
 .ba[data-state="pred"] .ba-po{opacity:0}
@@ -143,26 +145,6 @@ p{text-wrap:pretty}
 .ba-ctl button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .ba h3{margin:18px 0 4px;font-size:1.15rem;font-weight:800;font-stretch:108%}
 .ba p{margin:0;color:var(--muted);font-size:.96rem}
-
-/* Process */
-.proc{display:grid;gap:48px}
-@media (min-width:980px){.proc{grid-template-columns:1.3fr .7fr;gap:64px;align-items:start}}
-.steps{list-style:none;padding:0;margin:38px 0 0;display:grid;gap:12px;counter-reset:s}
-@media (min-width:620px){.steps{grid-template-columns:1fr 1fr}}
-.steps li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:3px 16px;padding:18px 20px;border-radius:16px;background:var(--ink-2);border:1px solid rgba(255,255,255,.07)}
-.steps li::before{content:counter(s,decimal-leading-zero);grid-row:span 2;font-weight:800;font-stretch:122%;font-size:1.5rem;line-height:1.15;color:var(--frost)}
-.steps b{color:#fff;font-weight:700}
-.steps span{color:var(--mist);font-size:.95rem;line-height:1.5}
-.reels-h{margin:0 0 14px;font-weight:700;color:#fff}
-.reels{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.reel{position:relative;display:block;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#222;text-decoration:none;color:#fff}
-.reel img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.reel:hover img{transform:scale(1.04)}
-.reel-cap{position:absolute;left:0;right:0;bottom:0;padding:48px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.88))}
-.reel-cap b{display:block;font-size:.95rem;line-height:1.25}
-.reel-cap small{display:block;margin-top:4px;color:#c8d5dc;font-size:.8rem}
-.more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;min-height:44px;font-weight:700;color:#fff;text-decoration:none}
-.more:hover{text-decoration:underline}
 
 /* For whom */
 .duo{display:grid;gap:18px}
@@ -230,15 +212,17 @@ p{text-wrap:pretty}
 .contact{display:grid;gap:34px;align-items:center}
 @media (min-width:880px){.contact{grid-template-columns:1fr 1fr;gap:56px}}
 .contact .cta-row{margin-top:28px}
-.map-card{position:relative;display:block;aspect-ratio:16/11;border-radius:var(--r);overflow:hidden;background:var(--ice);border:1px solid var(--line);color:var(--ink);text-decoration:none}
-.map-card .topo{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:rgba(29,100,135,.22);stroke-width:1.4}
-.map-pin{position:absolute;left:50%;top:44%;display:grid;place-items:center;width:58px;height:58px;border-radius:50% 50% 50% 0;background:var(--ink);color:#fff;transform:translate(-50%,-50%) rotate(-45deg);box-shadow:0 16px 30px -12px rgba(0,0,0,.5)}
-.map-pin .i{transform:rotate(45deg);width:24px;height:24px}
-.map-label{position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:14px;background:#fff;box-shadow:0 10px 24px -16px rgba(0,0,0,.4)}
+.addr{display:flex;align-items:flex-start;gap:12px;margin:24px 0 0;font-style:normal;font-size:1.1rem;line-height:1.45}
+.addr .i{width:24px;height:24px;margin-top:2px;color:var(--acc)}
+.map-card{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 34px 70px -44px rgba(14,17,20,.4)}
+.map-frame{display:block;width:100%;aspect-ratio:4/3;border:0;background:var(--ice)}
+@media (min-width:880px){.map-frame{aspect-ratio:16/11}}
+.map-label{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px 12px 18px;border-top:1px solid var(--line)}
+.map-label>span{min-width:0}
 .map-label b{display:block;font-size:1.05rem}
-.map-label small{color:var(--muted);font-size:.88rem}
-.map-go{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.92rem;white-space:nowrap}
-.map-card:hover .map-go{text-decoration:underline}
+.map-label small{display:block;margin-top:2px;color:var(--muted);font-size:.88rem;line-height:1.4}
+.map-go{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 4px;font-weight:700;font-size:.95rem;white-space:nowrap;text-decoration:none}
+.map-go:hover{text-decoration:underline}
 
 /* Footer */
 .ftr{background:var(--ink);color:var(--mist);padding:52px 0 34px}
@@ -271,7 +255,6 @@ p{text-wrap:pretty}
   <symbol id="i-iron" viewBox="0 0 24 24"><path d="M2.5 18h19v-3.5A5.5 5.5 0 0 0 16 9H9.5a7 7 0 0 0-7 7z"/><path d="M10 9V6.5A1.5 1.5 0 0 1 11.5 5H19"/><path d="M6 21.5h12"/></symbol>
   <symbol id="i-edge" viewBox="0 0 24 24"><path d="M3 20h18M3 20 15 5"/><path d="M8.5 20a6 6 0 0 0-1.9-4.4"/><path d="m17 3 4 4"/></symbol>
   <symbol id="i-patch" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2"/><path d="M6 6v12M18 6v12M10 10h.01M14 10h.01M10 14h.01M14 14h.01"/></symbol>
-  <symbol id="i-play" viewBox="0 0 24 24"><path d="m6 3 14 9-14 9z"/></symbol>
 </svg>
 
 <a class="skip" href="#main">Preskočiť na obsah</a>
@@ -282,7 +265,7 @@ p{text-wrap:pretty}
     <nav class="nav" aria-label="Hlavná navigácia">
       <a href="#sluzby">Služby</a>
       <a href="#pred-po">Pred / po</a>
-      <a href="#proces">Proces</a>
+      <a href="#objednavka">Objednávka</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <a class="btn btn-ink btn-sm" href="#objednavka">Objednať</a>
@@ -294,7 +277,7 @@ p{text-wrap:pretty}
     <div class="wrap hero-in">
       <div class="hero-copy">
         <p class="pill"><span class="dot" aria-hidden="true"></span>Sezóna 2026/27&nbsp;· prijímam objednávky</p>
-        <h1 class="display" id="hero-h">Prémiové voskovanie <span>lyží &amp; snowboardov</span></h1>
+        <h1 class="display" id="hero-h">Voskovanie <span>lyží &amp; snowboardov</span></h1>
         <p class="lead">Precízny servis pre tých, ktorí chcú maximálny sklz a&nbsp;výkon na svahu. Voskovanie, brúsenie hrán aj opravy sklznice na jednom mieste.</p>
         <div class="cta-row">
           <a class="btn btn-ink" href="#objednavka">Objednať servis <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -354,22 +337,23 @@ p{text-wrap:pretty}
           </ul>
         </article>
       </div>
-      <p class="note"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Cenu a&nbsp;termín dohodneme v&nbsp;správe na Instagrame.</p>
+      <p class="note"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Cenu a&nbsp;termín dohodneme v&nbsp;správe na Instagrame alebo Facebooku.</p>
     </div>
   </section>
 
   <section class="sec sec-ice" id="pred-po" aria-labelledby="ba-h">
-    <div class="wrap">
+    <div class="wrap ba-wrap">
       <div class="sec-head">
         <p class="kicker">Pred / po</p>
         <h2 class="display h2" id="ba-h">Rozdiel vidno na prvý pohľad</h2>
         <p class="sec-lead">Skutočné lyže a&nbsp;snowboardy zákazníkov. Prepni si <b>Pred</b> a&nbsp;<b>Po</b>&nbsp;– alebo ťukni na fotku.</p>
+        <a class="more" href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>Ďalšie práce na @urbanwaxing</a>
       </div>
       <div class="ba-grid">
         <article class="ba" data-state="po">
           <div class="ba-media">
-            <img class="ba-img ba-pred" src="img/board-pred-800.webp" srcset="img/board-pred-480.webp 480w, img/board-pred-800.webp 800w, img/board-pred-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Dva snowboardy pred servisom – sivá, vysušená sklznica">
-            <img class="ba-img ba-po" src="img/board-po-800.webp" srcset="img/board-po-480.webp 480w, img/board-po-800.webp 800w, img/board-po-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Tie isté snowboardy po servise – čierna, navoskovaná sklznica">
+            <img class="ba-img ba-pred" src="img/board-pred-800.webp" srcset="img/board-pred-480.webp 480w, img/board-pred-800.webp 800w, img/board-pred-1040.webp 1040w" sizes="(min-width: 1000px) 340px, (min-width: 780px) calc(50vw - 43px), calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Dva snowboardy pred servisom – sivá, vysušená sklznica">
+            <img class="ba-img ba-po" src="img/board-po-800.webp" srcset="img/board-po-480.webp 480w, img/board-po-800.webp 800w, img/board-po-1040.webp 1040w" sizes="(min-width: 1000px) 340px, (min-width: 780px) calc(50vw - 43px), calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Tie isté snowboardy po servise – čierna, navoskovaná sklznica">
             <div class="ba-ctl" role="group" aria-label="Snowboardy: pred alebo po">
               <button type="button" data-show="pred" aria-pressed="false">Pred</button>
               <button type="button" data-show="po" aria-pressed="true">Po</button>
@@ -380,8 +364,8 @@ p{text-wrap:pretty}
         </article>
         <article class="ba" data-state="po">
           <div class="ba-media">
-            <img class="ba-img ba-pred" src="img/lyze-pred-800.webp" srcset="img/lyze-pred-480.webp 480w, img/lyze-pred-800.webp 800w, img/lyze-pred-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Lyže pred servisom – vyblednutá sklznica so suchými miestami">
-            <img class="ba-img ba-po" src="img/lyze-po-800.webp" srcset="img/lyze-po-480.webp 480w, img/lyze-po-800.webp 800w, img/lyze-po-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Lyže po servise – rovnomerne čierna sklznica">
+            <img class="ba-img ba-pred" src="img/lyze-pred-800.webp" srcset="img/lyze-pred-480.webp 480w, img/lyze-pred-800.webp 800w, img/lyze-pred-1040.webp 1040w" sizes="(min-width: 1000px) 340px, (min-width: 780px) calc(50vw - 43px), calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Lyže pred servisom – vyblednutá sklznica so suchými miestami">
+            <img class="ba-img ba-po" src="img/lyze-po-800.webp" srcset="img/lyze-po-480.webp 480w, img/lyze-po-800.webp 800w, img/lyze-po-1040.webp 1040w" sizes="(min-width: 1000px) 340px, (min-width: 780px) calc(50vw - 43px), calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Lyže po servise – rovnomerne čierna sklznica">
             <div class="ba-ctl" role="group" aria-label="Lyže: pred alebo po">
               <button type="button" data-show="pred" aria-pressed="false">Pred</button>
               <button type="button" data-show="po" aria-pressed="true">Po</button>
@@ -390,50 +374,6 @@ p{text-wrap:pretty}
           <h3>Predĺženie životnosti sklznice</h3>
           <p>Voskovanie lyží&nbsp;· január 2026</p>
         </article>
-        <article class="ba" data-state="po">
-          <div class="ba-media">
-            <img class="ba-img ba-pred" src="img/sklz-pred-800.webp" srcset="img/sklz-pred-480.webp 480w, img/sklz-pred-800.webp 800w, img/sklz-pred-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Sklznica pred servisom – poškriabaná a sivá">
-            <img class="ba-img ba-po" src="img/sklz-po-800.webp" srcset="img/sklz-po-480.webp 480w, img/sklz-po-800.webp 800w, img/sklz-po-1040.webp 1040w" sizes="(min-width: 780px) 370px, calc(100vw - 32px)" width="1040" height="1305" loading="lazy" decoding="async" alt="Sklznica po servise – hladká a lesklá">
-            <div class="ba-ctl" role="group" aria-label="Sklznica z roku 2023: pred alebo po">
-              <button type="button" data-show="pred" aria-pressed="false">Pred</button>
-              <button type="button" data-show="po" aria-pressed="true">Po</button>
-            </div>
-          </div>
-          <h3>Sklznica ako nová</h3>
-          <p>Jedna z&nbsp;prvých prác · rok 2023</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec-ink" id="proces" aria-labelledby="proc-h">
-    <div class="wrap proc">
-      <div>
-        <p class="kicker">Proces</p>
-        <h2 class="display h2" id="proc-h">Voskovanie v&nbsp;6&nbsp;krokoch</h2>
-        <p class="sec-lead">Ručná práca. Žiadna pásová výroba. Každý pár riešim individuálne.</p>
-        <ol class="steps">
-          <li><b>Odstránenie zvyškového vosku</b><span>Starý, zašpinený vosok dole zo sklznice.</span></li>
-          <li><b>Odmastenie</b><span>Čistý povrch, aby nový vosok dobre priľnul.</span></li>
-          <li><b>Aplikácia nového vosku</b><span>Čerstvý vosok na celú plochu sklznice.</span></li>
-          <li><b>Zažehlenie</b><span>Žehlička vosok roztopí a&nbsp;zapracuje do sklznice.</span></li>
-          <li><b>Odstránenie prebytočného vosku</b><span>Po vychladnutí zoškrabem, čo je navyše.</span></li>
-          <li><b>Kefovanie dvoma druhmi vlasov</b><span>Na záver kefy, ktoré sklznicu doladia pre lepší sklz.</span></li>
-        </ol>
-      </div>
-      <div>
-        <p class="reels-h">Pozri si to na videu</p>
-        <div class="reels">
-          <a class="reel" href="https://www.instagram.com/urbanwaxing/reel/DVBbrixiLtu/" target="_blank" rel="noopener">
-            <img src="img/reel-proces.webp" width="361" height="640" loading="lazy" decoding="async" alt="">
-            <span class="reel-cap"><b>Proces voskovania lyží</b><small>Video na Instagrame</small></span>
-          </a>
-          <a class="reel" href="https://www.instagram.com/urbanwaxing/reel/DfXp1efEblS/" target="_blank" rel="noopener">
-            <img src="img/reel-hrany.webp" width="360" height="640" loading="lazy" decoding="async" alt="">
-            <span class="reel-cap"><b>Brúsenie hrán na snowboarde</b><small>Video na Instagrame</small></span>
-          </a>
-        </div>
-        <a class="more" href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>Viac na @urbanwaxing</a>
       </div>
     </div>
   </section>
@@ -465,12 +405,12 @@ p{text-wrap:pretty}
     <div class="wrap order">
       <div>
         <p class="kicker">Objednávka</p>
-        <h2 class="display h2" id="obj-h">Objednaj servis cez Instagram</h2>
-        <p class="sec-lead">Objednávky a&nbsp;termíny riešim v&nbsp;správach. Vyklikaj, čo potrebuješ&nbsp;– správu pripravím za teba, stačí ju vložiť do chatu.</p>
+        <h2 class="display h2" id="obj-h">Objednaj servis cez správu</h2>
+        <p class="sec-lead">Objednávky a&nbsp;termíny vybavujem v&nbsp;správach na Instagrame alebo Facebooku. Vyklikaj, čo potrebuješ&nbsp;– správu pripravím za teba, stačí ju vložiť do chatu.</p>
         <ol class="how">
-          <li><b>Napíš správu</b><br><span>na Instagram @urbanwaxing</span></li>
+          <li><b>Napíš správu</b><br><span>na Instagram @urbanwaxing alebo na Facebook</span></li>
           <li><b>Dohodneme termín</b><br><span>a&nbsp;cenu podľa toho, čo treba spraviť</span></li>
-          <li><b>Výbavu odovzdáš</b><br><span>v&nbsp;Sokolovciach</span></li>
+          <li><b>Výbavu odovzdáš</b><br><span>na Hlohoveckej 347/3 v&nbsp;Sokolovciach</span></li>
           <li><b>Vyzdvihneš ju pripravenú</b><br><span>na prvú jazdu</span></li>
         </ol>
       </div>
@@ -526,29 +466,20 @@ p{text-wrap:pretty}
       <div>
         <p class="kicker">Kontakt</p>
         <h2 class="display h2" id="kontakt-h">Nájdeš ma v&nbsp;Sokolovciach</h2>
-        <p class="sec-lead">Lokálny servis pre Sokolovce a&nbsp;okolie. Presné miesto a&nbsp;čas odovzdania výbavy dohodneme v&nbsp;správe.</p>
+        <p class="sec-lead">Lokálny servis pre Sokolovce a&nbsp;okolie. Čas odovzdania výbavy dohodneme v&nbsp;správe na Instagrame alebo Facebooku.</p>
+        <address class="addr"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span><b>Hlohovecká 347/3</b><br>922&nbsp;31 Sokolovce</span></address>
         <div class="cta-row">
           <a class="btn btn-ink" href="https://ig.me/m/urbanwaxing" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-msg"/></svg>Napísať správu</a>
           <a class="btn btn-line" href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ig"/></svg>@urbanwaxing</a>
         </div>
       </div>
-      <a class="map-card" href="https://www.google.com/maps/search/?api=1&amp;query=Sokolovce" target="_blank" rel="noopener" aria-label="Sokolovce, okres Piešťany – otvoriť v Mapách Google">
-        <svg class="topo" viewBox="0 0 400 275" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <path d="M-20 60C60 20 120 90 200 60s150-50 230-10"/>
-          <path d="M-20 95c80-40 140 30 220 0s150-50 230-10"/>
-          <path d="M-20 130c80-40 140 30 220 0s150-50 230-10"/>
-          <path d="M-20 165c80-40 140 30 220 0s150-50 230-10"/>
-          <path d="M-20 200c80-40 140 30 220 0s150-50 230-10"/>
-          <path d="M-20 235c80-40 140 30 220 0s150-50 230-10"/>
-          <ellipse cx="200" cy="118" rx="70" ry="34"/>
-          <ellipse cx="200" cy="118" rx="38" ry="17"/>
-        </svg>
-        <span class="map-pin" aria-hidden="true"><svg class="i"><use href="#i-pin"/></svg></span>
-        <span class="map-label">
-          <span><b>Sokolovce</b> <small>okres Piešťany</small></span>
-          <span class="map-go">Otvoriť v&nbsp;Mapách <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
+      <div class="map-card">
+        <iframe class="map-frame" src="https://maps.google.com/maps?q=Hlohoveck%C3%A1%20347%2F3%2C%20922%2031%20Sokolovce&amp;z=15&amp;hl=sk&amp;output=embed" title="Mapa: Urban Waxing, Hlohovecká 347/3, Sokolovce" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <div class="map-label">
+          <span><b>Urban Waxing</b> <small>Hlohovecká 347/3, Sokolovce</small></span>
+          <a class="map-go" href="https://www.google.com/maps/dir/?api=1&amp;destination=Hlohoveck%C3%A1+347%2F3%2C+922+31+Sokolovce" target="_blank" rel="noopener">Navigovať <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -557,7 +488,7 @@ p{text-wrap:pretty}
   <div class="wrap ftr-in">
     <div>
       <img src="img/logo-white.png" width="456" height="77" alt="Urban Waxing" loading="lazy">
-      <p>Prémiové voskovanie lyží &amp;&nbsp;snowboardov&nbsp;· Sokolovce</p>
+      <p>Voskovanie lyží &amp;&nbsp;snowboardov&nbsp;· Hlohovecká 347/3, Sokolovce</p>
     </div>
     <nav aria-label="Odkazy v pätičke">
       <a href="#sluzby">Služby</a>
@@ -565,7 +496,7 @@ p{text-wrap:pretty}
       <a href="#objednavka">Objednávka</a>
       <a href="https://www.instagram.com/urbanwaxing/" target="_blank" rel="noopener">Instagram</a>
     </nav>
-    <p class="ftr-bottom">© 2026 Urban Waxing&nbsp;· Fotky a&nbsp;videá: @urbanwaxing</p>
+    <p class="ftr-bottom">© 2026 Urban Waxing&nbsp;· Fotky: @urbanwaxing</p>
   </div>
 </footer>
 
